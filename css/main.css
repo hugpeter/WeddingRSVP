@@ -1,0 +1,789 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+.header-container {
+    border-bottom: 20px solid #e44d26;
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #e44d26;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #f16529;
+}
+
+.title {
+    color: white;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+    background: #e44d26;
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: white;
+    padding: 0px 5% 10px;
+}
+
+.footer-container footer {
+    color: white;
+    padding: 20px 0;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body, html{
+    background-color: #00D4FF;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100vw;
+    height: 600vh;
+    padding: 0;
+    margin: 0;
+    z-index: -11;
+}
+
+
+svg {
+    display: block;
+}
+
+/*.shadow{
+    -webkit-filter: drop-shadow(-5px 2.5px 0px #C1DAE3);
+    filter: drop-shadow(-10px 10px 0px #C1DAE3);    
+}*/
+
+@keyframes float {
+    from{}
+    to{
+        transform: translateY(20px);
+    }
+}
+
+div{
+    padding: 0;
+}
+
+#SunSetSky
+{
+    position: absolute;
+    width: 100vw;
+    height: 2000px;
+    top: 6000px;
+    left: 0vw;
+    text-align: center;
+    background-image: url(../img/SunSetSky.svg);
+    background-repeat: no-repeat;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+}
+
+#introHook{
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+#sunshine{
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    top: -100px;
+    right: 15vw;
+    text-align: center;
+   /* background-image: url(../img/SunShine.svg);
+    background-repeat: no-repeat;*/
+    z-index: 0;
+}
+
+#PLinBalloon{
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    z-index: 5;
+}
+
+#PeterLuisaBanner
+{
+    position:absolute;
+    width: 30vw;
+    height: 100vh;
+    top: 100px;
+    left: 35vw;
+    text-align: center;
+    background-image: url(../img/PeterLuisaBanner.svg);
+    background-repeat: no-repeat;
+    z-index: 3;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#scrollDown{
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    color: white;
+    font-size: 8em;
+    font-family: 'Berkshire Swash', cursive;
+    /*text-shadow: 1px 1px #00D4FF;*/
+    z-index: 1;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#text{
+    position: fixed;
+    left: 30%;
+    top: 60%;
+    color: white;
+    font-size: 4em;
+    font-family: 'Berkshire Swash', cursive;
+    height: 50%;
+    z-index: 20;
+}
+
+#MainCloud1
+{
+    position:absolute;
+    width: 40vw;
+    height: 100vh;
+    top: 58%;
+    left: 46%;
+    text-align: center;
+    background-image: url(../img/MainCloud1.svg);
+    background-repeat: no-repeat;
+    z-index: 2;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#MainCloud2
+{
+    position:absolute;
+    width: 10vw;
+    height: 100vh;
+    top: 70vh;
+    right: 20vw;
+    text-align: center;
+    background-image: url(../img/MainCloud2.svg);
+    background-repeat: no-repeat;
+    z-index: 4;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#BackLeftCloud1
+{
+    position:absolute;
+    width: 950px;
+    height: 755px;
+    top: -300px;
+    left: -110px;
+    text-align: center;
+    background-image: url(../img/BackLeftCloud1.svg);
+    background-repeat: no-repeat;
+    z-index: 0;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#BackLeftCloud2
+{
+    position:absolute;
+    width: 600px;
+    height: 400px;
+    bottom: -300px;
+    left: 50px;
+    text-align: center;
+    background-image: url(../img/BackLeftCloud2.svg);
+    background-repeat: no-repeat;
+    z-index: 6;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#Cloud1
+{
+    position:absolute;
+    width: 500px;
+    height: 1000px;
+    right: -10%;
+    top: 150%;
+    text-align: center;
+    background-image: url(../img/Cloud1.svg);
+    background-repeat: no-repeat;
+    z-index: 2;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#Cloud2
+{
+    position:absolute;
+    width: 900px;
+    height: 1260px;
+    top: 300%;
+    left: -200px;
+    background-image: url(../img/Cloud2.svg);
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+#Plane
+{
+    position: fixed;
+    width: 900px;
+    height: 500px;
+    top: 50%;
+    left: -900px;
+    z-index: 1;
+    background-image: url(../img/Plane.svg);
+    background-repeat: no-repeat;
+}
+
+#Cloud3{
+    position: absolute;
+    width: 900px;
+    height: 400px;
+    top: 340%;
+    right: 30px;
+    background-image: url(../img/Cloud3.svg);
+    background-repeat: no-repeat;
+    z-index: 0;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#Cloud4{
+    position: absolute;
+    width: 900px;
+    height: 400px;
+    top: 420%;
+    right: -300px;
+    background-image: url(../img/Cloud4.svg);
+    background-repeat: no-repeat;
+    z-index: 0;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#firework1Src{
+    position: absolute;
+    top: 7150px;
+    right: 25%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+
+#firework1{
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none; /*performance optimization*/
+}
+
+#PTYSkyline
+{
+    position: absolute;
+    width: 100vw;
+    height: 882px;
+    top: 7122px;
+    left: 0vw;
+    text-align: center;
+    background-image: url(../img/PTYSkyline.svg);
+    background-repeat: no-repeat;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
+
+#islandGround{
+    position: absolute;
+    width: 100vw;
+    height: 200px;
+    top: 7830px;
+    left: 0px;
+    background-image: url(../img/islandGround.svg);
+    background-repeat: no-repeat;
+    z-index: 3;
+    margin: 0;
+    padding: 0;
+}
+
+#islandGround2{
+    position: absolute;
+    width: 450px;
+    height: 100px;
+    top: 7925px;
+    left: 20px;
+    background-image: url(../img/islandGround2.svg);
+    background-repeat: no-repeat;
+    z-index: 7;
+    margin: 0;
+    padding: 0;
+}
+
+#palmTree{
+    position: absolute;
+    width: 800px;
+    height: 1000px;
+    top: 7000px;
+    right: -300px;
+    background-image: url(../img/PalmTree.svg);
+    background-repeat: no-repeat;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+}
+
+#rsvpSign{
+    position: absolute;
+    width: 325px;
+    height: 266px;
+    top: 7734px;
+    left: 40%;
+    z-index: 25;
+    background-image: url(../img/RSVP.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#rsvpForm{
+    position: fixed;
+    padding: 13%;
+    padding-top: 5%;
+}
+
+#rsvpFormShell{
+    position: fixed;
+    width: 650px;
+    height: 690px;
+    top: 50%;
+    left: 50%;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 25px;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/parchment.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 0;
+    z-index: 999;
+}
+
+#cancel{
+    position: fixed;
+    bottom: 68px;
+    right: 100px;
+    width: 110px;
+    height: auto;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+#firstName,
+#lastName{
+    width: 150px;
+    text-align: center;
+}
+
+#comments{
+    width: 100%;
+    height: 200px;
+}
+
+input,
+select,
+option,
+button,
+textarea{
+     background-color: transparent;
+     border: none;
+     resize: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-o-input-placeholder { 
+    color: grey; 
+} 
+
+p.rsvp {
+text-indent: 1em;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+    nav a {
+        float: left;
+        width: 27%;
+        margin: 0 1.7%;
+        padding: 25px 2%;
+        margin-bottom: 0;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+    .header-container,
+    .main aside {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;
+    }
+
+/* ============
+    WIDE: Menu
+   ============ */
+
+    .title {
+        float: left;
+    }
+
+    nav {
+        float: right;
+        width: 38%;
+    }
+
+/* ============
+    WIDE: Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 28%;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
