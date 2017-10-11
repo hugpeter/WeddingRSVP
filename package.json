@@ -4,7 +4,8 @@
   "description": "A fun little website for my wife and I to collect wedding RSVP information from our guests.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.html"
   },
   "repository": {
     "type": "git",
