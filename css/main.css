@@ -530,7 +530,7 @@ div{
     font-family: 'Berkshire Swash', cursive;
     font-size: 25px;
     transform: translate(-50%, -50%);
-    background-image: url(../img/parchment.svg);
+    background-image: url(../img/Parchment.svg);
     background-position: center center;
     background-repeat: no-repeat;
     padding: 0;
@@ -582,7 +582,7 @@ textarea:focus, input:focus{
 :-ms-input-placeholder{color: #6d1d1d;}
 :-o-input-placeholder {color: #6d1d1d;}
 
-p.rsvp {
+.rsvp {
 text-indent: 1em;
 }
 
