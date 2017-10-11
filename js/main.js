@@ -333,7 +333,7 @@ $(document).ready(function(){
 
 	    		emailSentMessage
 	    			.to($text, 1, {x: '+=10px', autoAlpha: 0, ease: Power4.easeInOut})
-					.set($text, {x: '-=80px', y:'-=10px', text: "Thanks! Check your email!"})
+					.set($text, {x: '-=130px', y:'-=10px', text: "Thanks! Check your email!"})
 					.to($text, 1, {x: '+=20px', autoAlpha: 1, ease: Power4.easeInOut});
 	    } 
 
