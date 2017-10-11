@@ -2,7 +2,7 @@
   "name": "wedding-rsvp",
   "version": "1.0.0",
   "description": "A fun little website for my wife and I to collect wedding RSVP information from our guests.",
-  "main": "app.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
