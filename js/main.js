@@ -23,94 +23,6 @@ $(document).ready(function(){
 		cancel = $("#cancel"),
 	    rsvpSign = $("#rsvpSign");
 
-	// //firework Variables
-	// var srcSize = 30,
-	// 	quantity = 200,
-	// 	sizeMin = 1,
-	// 	sizeMax = 10,
-	// 	speed = 1,
-	// 	gravity = 0.2,
-	// 	explosionQuantity = 3;
-
-	// var fw1Src = document.querySelectorAll('#firework1Src');
-
-	// var explosions = [],
-	// 	currentExplosion = 0,
-	// 	container, i;
-
-	// for (i=0; i < explosionQuantity; i++){
-	// 	container = document.createElement("div");
-	// 	container.style.cssText = "position:absolute; left:0; top:0; overflow:visible; z-index:5000; pointer-events:none;";
-	// 	document.body.appendChild(container);
-	// 	explosions.push({
-	// 		container: container,
-	// 		animation: createExplosion(container)
-	// 	});
-	// }
-
-	// function createExplosion(container){
-	// 	var firework1TL = new TimelineMax({paused: true}),
-	// 		fireworks = [],
-	// 		angle, length, firework, i, size;
-
-	// 	for(i=0; i<quantity; i++){
-	// 		firework = document.createElement('div');
-	// 		fireworks.push(firework);
-	// 		firework.className = 'firework';
-	// 		size = getRandom(sizeMin, sizeMax);
-	// 		container.appendChild(firework);
-	// 		angle = Math.random() * Math.PI * 2;
-	// 		length = Math.random() * (srcSize / 2 - size / 2);
-
-	// 		TweenMax.set(firework, {
-	// 			x:Math.cos(angle) * length,
-	// 			y:Math.sin(angle) * length,
-	// 			width:size,
-	// 			height:size,
-	// 			xPercent: -50,
-	// 			yPercent: -50,
-	// 			visibility: 'hidden',
-	// 			force3D:true,
-	// 			backgroundColor: 'white'
-	// 		});
-
-	// 		firework1TL.to(firework, 1 + Math.random(), {
-	// 			opacity: 0,
-	// 			visibility: 'visible',
-	// 			physics2D:{
-	// 				angle: angle * 180 / Math.PI,
-	// 				velocity: (100 + Math.random() * 300) * speed,
-	// 				gravity: 700 * gravity
-	// 			}
-	// 		}, 0);
-	// 	}
-
-	// 	firework1TL.set(fireworks, {visibility:'hidden'});
-
-	// 	return firework1TL;
-	// }
-
-	// function explode(element){
-		
-	// 	var bounds = element.getBoundingClientRect(),
- //      		explosion;
-
-	// 	if(++currentExplosion === explosions.length){
-	// 		currentExplosion = 0;
-	// 	}
-
-	// 	explosion = explosions[currentExplosion];
-	// 	TweenMax.set(explosion.container, {x:bounds.left + bounds.width / 2, y:bounds.top + bounds.height / 2});
-	// 	explosion.animation.restart();
-	// }
-
-	// function getRandom(min, max){
-	// 	return min + Math.random() * (max - min);
-	// }
-
-	// explode(fw1Src[0]);
-
-
 	//initialize scroll magic controller
 	controller = new ScrollMagic.Controller();
 
@@ -333,7 +245,7 @@ $(document).ready(function(){
 
 	    		emailSentMessage
 	    			.to($text, 1, {x: '+=10px', autoAlpha: 0, ease: Power4.easeInOut})
-					.set($text, {x: '-=130px', y:'-=10px', text: "Thanks! Check your email!"})
+					.set($text, {x: '-=160px', y:'-=10px', text: "Thanks! Check your email!"})
 					.to($text, 1, {x: '+=20px', autoAlpha: 1, ease: Power4.easeInOut});
 	    } 
 
