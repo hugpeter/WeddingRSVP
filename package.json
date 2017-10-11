@@ -1,0 +1,28 @@
+{
+  "name": "wedding-rsvp",
+  "version": "1.0.0",
+  "description": "A fun little website for my wife and I to collect wedding RSVP information from our guests.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugpeter/WeddingRSVP.git"
+  },
+  "keywords": [
+    "wedding",
+    "rsvp",
+    "peter",
+    "luisa",
+    "panama",
+    "panama",
+    "city"
+  ],
+  "author": "Peter James Willis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugpeter/WeddingRSVP/issues"
+  },
+  "homepage": "https://github.com/hugpeter/WeddingRSVP#readme"
+}
