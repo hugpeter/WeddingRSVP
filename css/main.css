@@ -559,6 +559,10 @@ div{
     height: 200px;
 }
 
+#email{
+    width: 100%;
+}
+
 input,
 select,
 option,
@@ -573,12 +577,10 @@ textarea:focus, input:focus{
     outline: none;
 }
 
-::-webkit-input-placeholder,
-::-moz-placeholder,
-:-ms-input-placeholder,
-:-o-input-placeholder { 
-    color: grey; 
-} 
+::-webkit-input-placeholder{color: #6d1d1d; }
+::-moz-placeholder{color: #6d1d1d;}
+:-ms-input-placeholder{color: #6d1d1d;}
+:-o-input-placeholder {color: #6d1d1d;}
 
 p.rsvp {
 text-indent: 1em;
