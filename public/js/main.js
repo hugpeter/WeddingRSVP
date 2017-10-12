@@ -1,6 +1,32 @@
 $(document).ready(function(){
 
-	//variables
+	//get device width
+	// var width = (window.innerWidth > 0) ? window.innerWidth : screen.width; //add this when testing on phones.
+	var width = screen.width;
+	
+	//animation values
+	var balloonFloatDown,
+		balloonMoveLeft,
+		balloonMoveUp
+		;
+	
+	
+	if(width <= 560){
+		alert("To view site, use your phone in landscape mode!");
+	}
+	else if(width > 560 && width <= 1140){
+		balloonFloatDown = '-70%';
+		balloonMoveLeft = '-75%';
+		balloonMoveUp = '-83%';
+	}
+	else if(width > 1140){
+		balloonFloatDown = '-83%';
+		balloonMoveLeft = '-85%';
+		balloonMoveUp = '-83%';
+	}
+
+
+	//elements to manipulate
 	var controller,
 		$sun = $('#sunshine'),
 		$sunCenter = $('#sunshine #center'),
@@ -34,7 +60,7 @@ $(document).ready(function(){
 			.set($text, {autoAlpha: 0})
 			.set($PLinBalloon, {y: '-150%', scale: 1.8, transformOrigin: 'bottom center'})
 			.set($scrollDown, {autoAlpha: 0, x: '-=80px'})
-			.to($PLinBalloon, 5, {y: '-83%'})
+			.to($PLinBalloon, 5, {y: balloonFloatDown})
 			.add('balloonIn')
 			.fromTo($luisaEyes, 0.1, {scaleY:1, transformOrigin: 'center center'}, {scaleY:0.1, repeat: 1, yoyo: true}, 'balloonIn-=2')
 			.fromTo($peterEyes, 0.1, {scaleY:1, transformOrigin: 'center center'}, {scaleY:0.1, repeat: 1, yoyo: true}, 'balloonIn-=1')
@@ -42,14 +68,14 @@ $(document).ready(function(){
 			.add('luisaSmiled')
 			.fromTo($peterSmile, 1, {scale: 0.4, transformOrigin: 'center center'}, {scale: 1}, '-=0.5')
 			.add('peterSmiled')
-			.fromTo($luisaEyes, 0.1, {scaleY:1, transformOrigin: 'center center'}, {scaleY:0.1, repeat: 1, yoyo: true}, 'luisaSmiled')
-			.fromTo($luisaEyes, 0.1, {scaleY:1, transformOrigin: 'center center'}, {scaleY:0.1, repeat: 1, yoyo: true}, 'luisaSmiled+=0.3')
-			.fromTo($peterEyes, 0.1, {scaleY:1, transformOrigin: 'center center'}, {scaleY:0.1, repeat: 1, yoyo: true}, 'peterSmiled')
+			.fromTo($luisaEyes, 0.1, {scaleY:1}, {scaleY:0.1, repeat: 1, yoyo: true}, 'luisaSmiled')
+			.fromTo($luisaEyes, 0.1, {scaleY:1}, {scaleY:0.1, repeat: 1, yoyo: true}, 'luisaSmiled+=0.3')
+			.fromTo($peterEyes, 0.1, {scaleY:1}, {scaleY:0.1, repeat: 1, yoyo: true}, 'peterSmiled')
 			.fromTo($sandBag1, 3, {rotation: 5, transformOrigin: 'top center'}, {rotation: -5}, '-=2')
 			.to($sandBag1, 1, {rotation: 0})
 			.fromTo($sandBag3, 3, {rotation: -5, transformOrigin: 'top center'}, {rotation: 5}, '-=4')
 			.to($sandBag3, 1, {rotation: 0}, '-=4')
-			.to($PLinBalloon, 0.5, {x: '-85%', scale: 1, ease: Power1.easeInOut}, '-=1')
+			.to($PLinBalloon, 0.5, {x: balloonMoveLeft, y: balloonMoveUp, scale: 1, ease: Power1.easeInOut}, '-=1')
 			.to($scrollDown, 1, {autoAlpha: 1, x: '0px', ease: Power4.easeInOut}, '-=1')
 			;
 
