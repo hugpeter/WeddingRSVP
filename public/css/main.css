@@ -476,47 +476,48 @@ nav a:hover {
     
     #introHook{
         top: 0;
-        left: 80%;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: black;
     }
     
     #sunshine{
-        width: 300px;
+        width: 210px;
         height: 300px;
         top: -100px;
-        right: 15vw;
+        right: 23vw;
     }
     
     #PLinBalloon{
         text-align: center;
         width: 800px;
         height: 1300px;
-        top: 50%;
-        left: 50%;
+        top: 65%;
+        left: 43%;
         transform: translate(-50%, -90%);
     }
     
     #scrollDown{
-        left: 50%;
-        top: 40%;
+        left: 48%;
+        top: 34%;
         color: white;
         font-size: 3em;
     }
     
     #text{
-        left: 30%;
-        top: 60%;
+        left: 31%;
+        top: 47%;
         color: white;
-        font-size: 2em;
+        font-size: 1.2em;
         height: 50%;
     }
     
     #MainCloud1
     {
-        width: 20vw;
+        width: 41vw;
         height: 100vh;
-        top: 58%;
-        left: 46%;
+        top: 59%;
+        left: 53%;
         text-align: center;
         z-index: 2;
     }
@@ -525,29 +526,29 @@ nav a:hover {
     {
         width: 10vw;
         height: 100vh;
-        top: 70vh;
-        right: 20vw;
+        top: 71vh;
+        right: 12vw;
     }
     
     #BackLeftCloud1
     {
-        width: 200px;
-        height: 111px;
-        top: -300px;
+        width: 475px;
+        height: 800px;
+        top: -275px;
         left: -110px;
     }
     
     #BackLeftCloud2
     {
-        width: 600px;
-        height: 400px;
-        bottom: -300px;
+        width: 200px;
+        height: 170px;
+        bottom: -104px;
         left: 50px;
     }
     
     #Cloud1
     {
-        width: 500px;
+        width: 200px;
         height: 1000px;
         right: -10%;
         top: 150%;
@@ -556,68 +557,68 @@ nav a:hover {
     
     #Cloud2
     {
-        width: 900px;
-        height: 1260px;
+        width: 310px;
+        height: 610px;
         top: 300%;
-        left: -200px;
+        left: -53px;
     }
     
     #Plane
     {
-        width: 900px;
-        height: 500px;
+        width: 360px;
+        height: 200px;
         top: 50%;
-        left: -900px;
+        left: -360px;
     }
     
     #Cloud3{
-        width: 900px;
-        height: 400px;
+        width: 200px;
+        height: 100px;
         top: 340%;
-        right: 30px;
+        right: 180px;
     }
     
     #Cloud4{
-        width: 900px;
-        height: 400px;
+        width: 300px;
+        height: 190px;
         top: 420%;
-        right: -300px;
+        right: -100px;
     }
     
     #PTYSkyline
     {
         width: 100vw;
         height: 882px;
-        top: 7122px;
+        top: 6392px;
         left: 0vw;
     }
     
     #islandGround{
         width: 100vw;
         height: 200px;
-        top: 7830px;
+        top: 6629px;
         left: 0px;
     }
     
     #islandGround2{
-        width: 450px;
+        width: 150px;
         height: 100px;
-        top: 7925px;
-        left: 20px;
+        top: 6654px;
+        left: 57px;
     }
     
     #palmTree{
-        width: 800px;
-        height: 1000px;
-        top: 7000px;
-        right: -300px;
+        width: 200px;
+        height: 330px;
+        top: 6360px;
+        right: -30px;
     }
     
     #rsvpSign{
-        width: 325px;
-        height: 266px;
-        top: 7734px;
-        left: 40%;
+        width: 105px;
+        height: 86px;
+        top: 6594px;
+        left: 47%;
     }
     
     #rsvpForm{

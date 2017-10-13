@@ -15,7 +15,7 @@ $(document).ready(function(){
 		alert("To view site, use your phone in landscape mode!");
 	}
 	else if(width > 560 && width <= 1140){
-		balloonFloatDown = '-70%';
+		balloonFloatDown = '-73%';
 		balloonMoveLeft = '-75%';
 		balloonMoveUp = '-83%';
 	}
