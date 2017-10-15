@@ -159,7 +159,7 @@ nav a:hover {
         overflow-x: hidden;
         overflow-y: scroll;
         width: 100vw;
-        height: 600vh;
+        height: auto;
         padding: 0;
         margin: 0;
         z-index: -11;
@@ -178,17 +178,6 @@ nav a:hover {
     }
     
     div{
-        padding: 0;
-    }
-
-    #SunSetSky
-    {
-        position: absolute;
-        text-align: center;
-        background-image: url(../img/SunSetSky.svg);
-        background-repeat: no-repeat;
-        z-index: -1;
-        margin: 0;
         padding: 0;
     }
     
@@ -362,6 +351,17 @@ nav a:hover {
         padding: 0;
     }
     
+    #SunSetSky
+    {
+        position: absolute;
+        text-align: center;
+        background-image: url(../img/SunSetSky.svg);
+        background-repeat: no-repeat;
+        z-index: -1;
+        margin: 0;
+        padding: 0;
+    }
+    
     #islandGround{
         position: absolute;
         background-image: url(../img/islandGround.svg);
@@ -465,14 +465,6 @@ nav a:hover {
 }
 
 @media only screen and (min-width: 568px) {
-    
-    #SunSetSky
-    {
-        width: 100vw;
-        height: 2000px;
-        top: 6000px;
-        left: 0vw;
-    }
     
     #introHook{
         top: 0;
@@ -587,22 +579,30 @@ nav a:hover {
     
     #PTYSkyline
     {
-        width: 100vw;
-        height: 882px;
+        width: 104vw;
+        height: 313px;
         top: 6392px;
+        left: -2vw;
+    }
+    
+    #SunSetSky
+    {
+        width: 100vw;
+        height: 705px;
+        top: 6000px;
         left: 0vw;
     }
     
     #islandGround{
-        width: 100vw;
-        height: 200px;
+        width: 110vw;
+        height: 76px;
         top: 6629px;
         left: 0px;
     }
     
     #islandGround2{
         width: 150px;
-        height: 100px;
+        height: 22px;
         top: 6654px;
         left: 57px;
     }

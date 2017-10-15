@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	//get device width
 	// var width = (window.innerWidth > 0) ? window.innerWidth : screen.width; //add this when testing on phones.
 	var width = screen.width;
@@ -12,14 +11,16 @@ $(document).ready(function(){
 	
 	
 	if(width <= 560){
-		alert("To view site, use your phone in landscape mode!");
+		alert(width);
 	}
 	else if(width > 560 && width <= 1140){
+		alert(width);
 		balloonFloatDown = '-73%';
 		balloonMoveLeft = '-75%';
 		balloonMoveUp = '-83%';
 	}
 	else if(width > 1140){
+		alert(width);
 		balloonFloatDown = '-83%';
 		balloonMoveLeft = '-85%';
 		balloonMoveUp = '-83%';
