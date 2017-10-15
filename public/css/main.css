@@ -457,14 +457,9 @@ nav a:hover {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-
-@media only screen and (min-width: 0px) {
-    
-
-
-}
-
-@media only screen and (min-width: 568px) {
+   
+/*Iphone 6, 6s, 7, 8 - 375x667*/
+@media only screen and (min-width: 569px) {
     
     #introHook{
         top: 0;
@@ -477,21 +472,21 @@ nav a:hover {
         width: 210px;
         height: 300px;
         top: -100px;
-        right: 23vw;
+        right: 13vw;
     }
     
     #PLinBalloon{
         text-align: center;
         width: 800px;
         height: 1300px;
-        top: 65%;
-        left: 43%;
+        top: 75%;
+        left: 46%;
         transform: translate(-50%, -90%);
     }
     
     #scrollDown{
-        left: 48%;
-        top: 34%;
+        left: 53%;
+        top: 38%;
         color: white;
         font-size: 3em;
     }
@@ -508,8 +503,8 @@ nav a:hover {
     {
         width: 41vw;
         height: 100vh;
-        top: 59%;
-        left: 53%;
+        top: 58%;
+        left: 50%;
         text-align: center;
         z-index: 2;
     }
@@ -519,7 +514,7 @@ nav a:hover {
         width: 10vw;
         height: 100vh;
         top: 71vh;
-        right: 12vw;
+        right: 15vw;
     }
     
     #BackLeftCloud1
@@ -603,7 +598,7 @@ nav a:hover {
     #islandGround2{
         width: 150px;
         height: 22px;
-        top: 6654px;
+        top: 6665px;
         left: 57px;
     }
     
@@ -656,7 +651,200 @@ nav a:hover {
 
 }
 
-@media only screen and (min-width: 1140px) {
+/*iphone 6+, 6s+, 7+, 8+ - 414x736*/ 
+@media only screen and (min-width: 668px) {
+    
+    #introHook{
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: black;
+    }
+    
+    #sunshine{
+        width: 210px;
+        height: 300px;
+        top: -100px;
+        right: 13vw;
+    }
+    
+    #PLinBalloon{
+        text-align: center;
+        width: 800px;
+        height: 1300px;
+        top: 75%;
+        left: 46%;
+        transform: translate(-50%, -90%);
+    }
+    
+    #scrollDown{
+        left: 53%;
+        top: 38%;
+        color: white;
+        font-size: 3em;
+    }
+    
+    #text{
+        left: 31%;
+        top: 47%;
+        color: white;
+        font-size: 1.2em;
+        height: 50%;
+    }
+    
+    #MainCloud1
+    {
+        width: 41vw;
+        height: 100vh;
+        top: 58%;
+        left: 50%;
+        text-align: center;
+        z-index: 2;
+    }
+    
+    #MainCloud2
+    {
+        width: 10vw;
+        height: 100vh;
+        top: 71vh;
+        right: 15vw;
+    }
+    
+    #BackLeftCloud1
+    {
+        width: 475px;
+        height: 800px;
+        top: -275px;
+        left: -110px;
+    }
+    
+    #BackLeftCloud2
+    {
+        width: 200px;
+        height: 170px;
+        bottom: -104px;
+        left: 50px;
+    }
+    
+    #Cloud1
+    {
+        width: 200px;
+        height: 1000px;
+        right: -10%;
+        top: 150%;
+        text-align: center;
+    }
+    
+    #Cloud2
+    {
+        width: 310px;
+        height: 610px;
+        top: 300%;
+        left: -53px;
+    }
+    
+    #Plane
+    {
+        width: 360px;
+        height: 200px;
+        top: 50%;
+        left: -360px;
+    }
+    
+    #Cloud3{
+        width: 200px;
+        height: 100px;
+        top: 340%;
+        right: 180px;
+    }
+    
+    #Cloud4{
+        width: 300px;
+        height: 190px;
+        top: 420%;
+        right: -100px;
+    }
+    
+    #PTYSkyline
+    {
+        width: 738px;
+        height: 339px;
+        top: 6392px;
+        left: 0px;
+    }
+    
+    #SunSetSky
+    {
+        width: 740px;
+        height: 768px;
+        top: 5963px;
+        left: 0px;
+    }
+    
+    #islandGround{
+        width: 736px;
+        height: 77px;
+        top: 6654px;
+        left: 0px;
+    }
+    
+    #islandGround2{
+        width: 150px;
+        height: 22px;
+        top: 6686px;
+        left: 77px;
+    }
+    
+    #palmTree{
+        width: 200px;
+        height: 330px;
+        top: 6386px;
+        right: -30px;
+    }
+    
+    #rsvpSign{
+        width: 105px;
+        height: 86px;
+        top: 6626px;
+        left: 47%;
+    }
+    
+    #rsvpForm{
+        padding: 13%;
+        padding-top: 5%;
+    }
+    
+    #rsvpFormShell{
+        width: 650px;
+        height: 690px;
+        font-size: 25px;
+    }
+    
+    #cancel{
+        bottom: 68px;
+        right: 100px;
+        width: 110px;
+        height: auto;
+    }
+    
+    #firstName,
+    #lastName{
+        width: 150px;
+        text-align: center;
+    }
+    
+    #comments{
+        width: 100%;
+        height: 200px;
+    }
+    
+    #email{
+        width: 100%;
+    }
+}
+
+/*1920X1080*/
+@media only screen and (min-width: 1500px) {
     #SunSetSky
     {
         width: 100vw;

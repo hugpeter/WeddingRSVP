@@ -11,16 +11,16 @@ $(document).ready(function(){
 	
 	
 	if(width <= 560){
-		alert(width);
+
 	}
 	else if(width > 560 && width <= 1140){
-		alert(width);
+	
 		balloonFloatDown = '-73%';
 		balloonMoveLeft = '-75%';
 		balloonMoveUp = '-83%';
 	}
 	else if(width > 1140){
-		alert(width);
+	
 		balloonFloatDown = '-83%';
 		balloonMoveLeft = '-85%';
 		balloonMoveUp = '-83%';
