@@ -6,33 +6,56 @@ $(document).ready(function(){
 	//animation values
 	var balloonFloatDown,
 		balloonMoveLeft,
-		balloonMoveUp
+		balloonMoveUp,
+		scrollDownHideDuration,
+		text1Duration,
+		planeDuration,
+		sunMovementDuration,
+		sunColorDuration
 		;
 	
 	
-	if(width <= 560){
-
-	}
-	else if(width > 560 && width <= 1140){
-	
+	if(width <= 668){
 		balloonFloatDown = '-73%';
 		balloonMoveLeft = '-75%';
 		balloonMoveUp = '-83%';
+		scrollDownHideDuration = 50;
+		text1Duration = 900;
+		planeDuration = 1000;
+		sunMovementDuration = 8000;
+		sunColorDuration = 7000;
+	}
+	else if(width > 669 && width <= 1140){
+		balloonFloatDown = '-73%';
+		balloonMoveLeft = '-82%';
+		balloonMoveUp = '-83%';
+		scrollDownHideDuration = 50;
+		text1Duration = 900;
+		planeDuration = 800;
+		sunMovementDuration = 8000;
+		sunColorDuration = 7000;
 	}
 	else if(width > 1140){
-	
 		balloonFloatDown = '-83%';
 		balloonMoveLeft = '-85%';
 		balloonMoveUp = '-83%';
+		scrollDownHideDuration = 100;
+		text1Duration = 1000;
+		planeDuration = 1500;
+		sunMovementDuration = 8000;
+		sunColorDuration = 7000;
 	}
-
-
+	
 	//elements to manipulate
 	var controller,
 		$sun = $('#sunshine'),
 		$sunCenter = $('#sunshine #center'),
 		$outerRing = $('#sunshine #outerRing'),
 		$innerRing = $('#sunshine #innerRing'),
+		$BLC1 = $('#BackLeftCloud1'),
+		$BLC2 = $('#BackLeftCloud2'),
+		$MC1 = $('#MainCloud1'),
+		$MC2 = $('#MainCloud2'),
 		$sky = $('#skyColor'),
 		$PLinBalloon = $('#PLinBalloon'),
 		$luisaSmile = $('#smile'),
@@ -82,20 +105,16 @@ $(document).ready(function(){
 
 
 	//on scroll, hide scroll down command, and begin to move clouds up at different speeds
-	var FallingTL = new TimelineMax();
-
-		FallingTL
-			.to($scrollDown, 4, {autoAlpha: 0, y: '+=160px', ease: Power4.easeInOut})
-			;
+	var scrollDownHide = new TweenMax.to($scrollDown, 4, {autoAlpha: 0, y: '+=160px', ease: Power4.easeInOut});
 
 	var RemoveInstructionsScene = new ScrollMagic.Scene({
 		triggerElement: '#introHook',
 		triggerHook: 0,
-		duration: 100,
+		duration: scrollDownHideDuration,
 		reverse: true
 	})
-	//.addIndicators()
-	.setTween(FallingTL)
+	// .addIndicators()
+	.setTween(scrollDownHide)
 	.addTo(controller);
 
 	//Sun movement and color change of sky/sun
@@ -107,7 +126,7 @@ $(document).ready(function(){
 	var SunMoveScene = new ScrollMagic.Scene({
 		triggerElement: '#introHook',
 		triggerHook: 0,
-		duration: 8000,
+		duration: sunMovementDuration,
 		reverse: true
 	})
 	.setTween(SunMovementTL)
@@ -123,7 +142,7 @@ $(document).ready(function(){
 	var SunColorScene = new ScrollMagic.Scene({
 		triggerElement: '#introHook',
 		triggerHook: 0,
-		duration: 7000,
+		duration: sunColorDuration,
 		reverse: true
 	})
 	.setTween(SunColorTL)
@@ -151,7 +170,7 @@ $(document).ready(function(){
 	})
 	.setTween([sandBag1TL, sandBag3TL])
 	.addTo(controller);
-
+	
 	var FirstTextTL = new TimelineMax();
 
 		FirstTextTL
@@ -162,12 +181,12 @@ $(document).ready(function(){
     var FirstTextScene = new ScrollMagic.Scene({
     	triggerElement: '#Cloud1',
     	triggerHook: 0.5,
-    	duration: 1300
+    	duration: text1Duration
     })
-   // .addIndicators()
+    // .addIndicators()
     .setTween(FirstTextTL)
     .addTo(controller);
-
+    
     var PlaneTL = new TimelineMax();
 
 	  	PlaneTL
@@ -176,9 +195,9 @@ $(document).ready(function(){
 	var PlaneScene = new ScrollMagic.Scene({
 		triggerElement: '#Cloud2',
 		triggerHook: 0.5,
-		duration: 1500
+		duration: text1Duration
 	})
-	// .addIndicators()
+    // .addIndicators()
 	.setTween(PlaneTL)
 	.addTo(controller);
 
