@@ -469,9 +469,56 @@ nav a:hover {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-   
+@media only screen and (orientation: portrait) {
+    #rotate{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: #00D4FF;
+        z-index: 9999;
+    }
+    
+    #rotateMsg{
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 30px;
+        line-height: 35px;
+        font-family: 'Berkshire Swash', cursive;
+        opacity: 0;
+    }
+    
+    #device{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        width: 20%;
+        height: 20%;
+    }
+    
+    #check{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        color: white;
+        font-size: 25px;
+    }
+}
+
 /*Iphone 6, 6s, 7, 8 - 375x667*/
-@media only screen and (min-width: 569px) {
+@media only screen and (min-width: 569px) and (orientation: landscape) {
     
     #introHook{
         top: 0;
@@ -663,7 +710,7 @@ nav a:hover {
 }
 
 /*iphone 6+, 6s+, 7+, 8+ - 414x736*/ 
-@media only screen and (min-width: 668px) {
+@media only screen and (min-width: 668px) and (orientation: landscape) {
     
     #introHook{
         top: 0;
@@ -857,7 +904,7 @@ nav a:hover {
 }
 
 /*1920X1080*/
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1500px) and (orientation: landscape) {
     #SunSetSky
     {
         width: 100vw;
@@ -896,7 +943,7 @@ nav a:hover {
     
     #text{
         left: 30%;
-        top: 60%;
+        top: 55%;
         font-size: 4em;
         height: 50%;
     }
