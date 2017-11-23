@@ -1,9 +1,7 @@
 $(document).ready(function(){
-	//get device width
-	// var width = (window.innerWidth > 0) ? window.innerWidth : screen.width; //add this when testing on phones.
-	var width = screen.width;
-	var height = screen.height;
+	
 	var landscapeModeCnt = 0;
+	var portraitModeCnt = 0;
 	
 	//elements to manipulate
 	var controller,
@@ -48,21 +46,22 @@ $(document).ready(function(){
 		;
 	
 	function orientationChange() {
-		width = screen.width;
-		height = screen.height;
+		//get device width
+		// var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+		var width = screen.width;
+		var height = screen.height;
 		
 		//landscape
 	    if(width > height){
+			landscapeModeCnt += 1;
 	    	
-	    	landscapeModeCnt += 1;
-	    	
-	    	if(landscapeModeCnt >= 2){
-				window.location.reload();
-			}
+	    	if(portraitModeCnt === 1){
+	    		window.location.reload();
+	    	}
 	    	
 	    	if(width <= 668){
 				balloonFloatDown = '-73%';
-				balloonMoveLeft = '-75%';
+				balloonMoveLeft = '-78%';
 				balloonMoveUp = '-83%';
 				scrollDownHideDuration = 50;
 				text1Duration = 900;
@@ -72,7 +71,7 @@ $(document).ready(function(){
 				balloonDuration = 4500;
 			}
 			else if(width > 669 && width <= 1140){
-				balloonFloatDown = '-73%';
+				balloonFloatDown = '-76%';
 				balloonMoveLeft = '-82%';
 				balloonMoveUp = '-83%';
 				scrollDownHideDuration = 50;
@@ -103,8 +102,8 @@ $(document).ready(function(){
 				BalloonIntroTL
 					.set(rsvpFormShell, {autoAlpha: 0, scale: 0.1})
 					.set($text, {autoAlpha: 0})
-					.set($PLinBalloon, {y: '-150%', scale: 1.8, transformOrigin: 'bottom center'})
-					.set($scrollDown, {autoAlpha: 0, x: '-=80px'})
+					.set($PLinBalloon, {y: '-150%', autoAlpha: 1, scale: 1.8, transformOrigin: 'bottom center'})
+					.set($scrollDown, {x: '-=80px'})
 					.to($PLinBalloon, 5, {y: balloonFloatDown})
 					.add('balloonIn')
 					.fromTo($luisaEyes, 0.1, {scaleY:1, transformOrigin: 'center center'}, {scaleY:0.1, repeat: 1, yoyo: true}, 'balloonIn-=2')
@@ -138,9 +137,9 @@ $(document).ready(function(){
 		
 			//Sun movement and color change of sky/sun
 			var SunMovementTL = new TimelineMax();
-		
+				//get rid of the from to, it is causing the sun to jump on load for different screen sizes.
 				SunMovementTL
-					.fromTo($sun, 1, {y: '+=30%', x: '-=5%'}, {y: '-=30%', x: '+=5%'});
+					.to($sun, 1,{y: '-=30%', x: '+=5%'});
 		
 			var SunMoveScene = new ScrollMagic.Scene({
 				triggerElement: '#introHook',
@@ -209,6 +208,7 @@ $(document).ready(function(){
 		    var PlaneTL = new TimelineMax();
 		
 			  	PlaneTL
+			  		.set($plane, {autoAlpha: 1})
 			  		.to($plane, 15, {x: '350%'});
 		
 			var PlaneScene = new ScrollMagic.Scene({
@@ -308,32 +308,22 @@ $(document).ready(function(){
 				    }
 				} 
 			 });
-	    }
-	    //portrait
-	    else{
-	    	TweenMax.set(device, {autoAlpha: 1});
+	    }else{
+	    	portraitModeCnt += 1;
+	    	
+	    	if(landscapeModeCnt === 1){
+	    		window.location.reload();
+	    	}
+	    	
+	    	TweenMax.set(device, {rotation: 0, autoAlpha: 1});
 	    	TweenMax.set(rotateMsg, {x: '-=10px'});
-	    	
-	    	var deviceDemensions = document.getElementById("device").getBoundingClientRect();
-	    	
-	    	var deviceHeight = deviceDemensions.height,
-	    		deviceWidth = deviceDemensions.width,
-	    		halfHeight = deviceHeight/2,
-	    		halfWidth = deviceWidth/2,
-	    		distance = halfHeight + halfWidth,
-	    		moveRight = "+=" + distance + "px";
-	    		
-	    	var moveCheckDown = halfWidth *.75 + "px";
-	    		
-	    	TweenMax.set(check, {y: "+=" + moveCheckDown});
 	    	
 	    	var rotateDeviceTL = new TimelineMax();
 	    	
 	    		rotateDeviceTL
 	    			.to(rotateMsg, 1, {x: '+=10px', autoAlpha: 1, ease: Power3.easeInOut})
-	    			.to(device, 1, {x: moveRight, ease: Power4.easeInOut}, '+=0.5')
-	    		    .to(device, 1, {rotation: -90, transformOrigin: 'bottom left', ease: Power4.easeInOut, ease: Power4.easeInOut})
-	    			.to(check, 1, {autoAlpha: 1, ease: Power4.easeIn});
+	    		    .to(device, 0.5, {rotation: -90, transformOrigin: 'center center', ease: Power4.easeInOut, ease: Power4.easeOut})
+	    			.to(check, 0.2, {autoAlpha: 1, ease: Power4.easeIn});
 	    }
 	}
   

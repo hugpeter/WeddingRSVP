@@ -223,7 +223,6 @@ nav a:hover {
         height: 20px;
         position: absolute;
         top: 0;
-        background-color: black;
     }
     
     #sunshine{
@@ -235,8 +234,8 @@ nav a:hover {
     #PLinBalloon{
         position: fixed;
         text-align: center;
-        transform: translate(-50%, -90%);
         z-index: 5;
+        opacity: 0;
     }
     
     #scrollDown{
@@ -250,6 +249,7 @@ nav a:hover {
         animation-timing-function: ease-in-out;
         animation-iteration-count: infinite;
         animation-direction: alternate;
+        opacity: 0;
     }
     
     #text{
@@ -257,6 +257,7 @@ nav a:hover {
         color: white;
         font-family: 'Berkshire Swash', cursive;
         z-index: 20;
+        opacity: 0;
     }
     
     #MainCloud1
@@ -324,6 +325,7 @@ nav a:hover {
         z-index: 1;
         background-image: url(../img/Plane.svg);
         background-repeat: no-repeat;
+        opacity: 0;
     }
     
     #Cloud3{
@@ -419,6 +421,7 @@ nav a:hover {
         background-repeat: no-repeat;
         padding: 0;
         z-index: 999;
+        opacity: 0;
     }
     
     #cancel{
@@ -465,6 +468,13 @@ nav a:hover {
     .rsvp {
     text-indent: 1em;
     }
+    
+    #rotateMsg,
+    #device,
+    #check{
+        opacity: 0;
+    }
+    
 
 /* ==========================================================================
    Media Queries
@@ -515,6 +525,10 @@ nav a:hover {
         color: white;
         font-size: 25px;
     }
+    
+    #cloud1{
+        display: none;
+    }
 }
 
 /*Iphone 6, 6s, 7, 8 - 375x667*/
@@ -528,9 +542,9 @@ nav a:hover {
     
     #sunshine{
         width: 210px;
-        height: 300px;
-        top: -100px;
-        right: 13vw;
+        height: 210px;
+        top: 40px;
+        right: 12vw;
     }
     
     #PLinBalloon{
@@ -538,7 +552,7 @@ nav a:hover {
         width: 800px;
         height: 1300px;
         top: 75%;
-        left: 46%;
+        left: 50%;
         transform: translate(-50%, -90%);
     }
     
@@ -550,11 +564,13 @@ nav a:hover {
     }
     
     #text{
-        left: 31%;
-        top: 47%;
+        left: 35%;
+        top: 55%;
         color: white;
-        font-size: 1.2em;
+        font-size: 1.8em;
+        width: 50%;
         height: 50%;
+        line-height: 1.5em;
     }
     
     #MainCloud1
@@ -720,9 +736,9 @@ nav a:hover {
     
     #sunshine{
         width: 210px;
-        height: 300px;
-        top: -100px;
-        right: 13vw;
+        height: 210px;
+        top: 40px;
+        right: 16vw;
     }
     
     #PLinBalloon{
@@ -923,8 +939,8 @@ nav a:hover {
     #sunshine{
         width: 600px;
         height: 600px;
-        top: -100px;
-        right: 15vw;
+        top: 50px;
+        right: 16vw;
     }
     
     #PLinBalloon{
