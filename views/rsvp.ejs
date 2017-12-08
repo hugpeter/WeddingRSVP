@@ -1,0 +1,40 @@
+<% include partials/header %>
+<% include partials/nav %>
+
+<p id="text">Thanks for the RSVP, please check your email!</p>
+
+<div id="rsvpFormWrapper" class="ui container">
+    <div class="ui small form">
+        <div class="two fields">
+          <div class="required field">
+            <label>First name</label>
+            <input id="firstName" type="text" placeholder="First name">
+          </div>
+          <div class="required field">
+            <label>Last name</label>
+            <input id="lastName" type="text" placeholder="Last name">
+          </div>
+        </div>
+        <div class="required field">
+            <label>e-mail</label>
+            <input id="email" type="email" placeholder="joe@schmoe.com">
+        </div>
+        <div class="inline field">
+          <div class="ui toggle checkbox">
+            <input id="attending" type="checkbox" tabindex="0" class="hidden">
+            <label>I am going to the wedding in Panama City, Panama!</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Any food allergies?</label>
+          <textarea id="foodAllergies" style="resize: none;"></textarea>
+        </div>
+        <div class="field">
+          <label>Send us a message</label>
+          <textarea id="comments" style="resize: none;"></textarea>
+        </div>
+        <div id="submit" class="ui fluid positive button">Send</div>
+    </div>
+</div>
+
+<% include partials/footer %>

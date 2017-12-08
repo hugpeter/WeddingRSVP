@@ -1,0 +1,39 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 60px;
+}
+
+.ui.navbar {
+	font-family: 'Berkshire Swash', cursive !important;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	margin-top: 10px !important;
+	width: 100%;
+	
+	/*position: fixed;*/
+	/*top: 0;*/
+	/*left: 50%;*/
+	/*transform: translateX(-50%);*/
+	/*z-index: 99;*/
+}
+
+.padding-reset{
+	padding: 0px !important;
+}
+
+.ui.message{
+	padding: 40px !important;
+}
+
+@media (max-width: 767px) {
+  	.ui.navbar{
+  	    margin-left: 10px;
+  	    margin-right: 10px;
+	}
+}
+
+.ui.vertical.menu{
+	margin-top: -15px !important;
+	width: 100%;
+	display: none;
+}

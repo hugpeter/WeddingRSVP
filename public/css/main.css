@@ -16,144 +16,6 @@ html {
     text-shadow: none;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
-}
-
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
-}
-
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.header-container {
-    border-bottom: 20px solid #e44d26;
-}
-
-.footer-container,
-.main aside {
-    border-top: 20px solid #e44d26;
-}
-
-.header-container,
-.footer-container,
-.main aside {
-    background: #f16529;
-}
-
-.title {
-    color: white;
-}
-
-/* ==============
-    MOBILE: Menu
-   ============== */
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: #e44d26;
-}
-
-nav a:hover,
-nav a:visited {
-    color: white;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
-}
-
-.main article h1 {
-    font-size: 2em;
-}
-
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
-}
-
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
-}
-
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 20px;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
     body, html{
         background-color: #00D4FF;
         overflow-x: hidden;
@@ -411,59 +273,33 @@ nav a:hover {
         cursor: pointer;
     }
     
-    #rsvpFormShell{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-image: url(../img/Parchment.svg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        padding: 0;
+    #rsvpFormWrapper{
+        position: absolute;
+        transform: translateX(-50%);
         z-index: 999;
         opacity: 0;
+        background-color: white;
+        border-radius: .28571429rem;
+        padding: 20px;
+        border: 1px solid grey;
+        border: 1px solid rgba(34,36,38,.15);
     }
     
-    #cancel{
-        position: fixed;
-        background-color: transparent;
-        color: black;
-        cursor: pointer;
+    #planningBtn,
+    #registryBtn{
+        position: absolute;
+        z-index: 990;
+        opacity: 0;
+        font-family: 'Berkshire Swash', cursive;
+        text-decoration: none;
+        color: white;
+        letter-spacing: 2px;
     }
     
-    #firstName,
-    #lastName{
-        width: 150px;
-        text-align: center;
+    #planningBtn:hover,
+    #registryBtn:hover{
+        border-bottom: 1px solid white;
     }
-    
-    #comments{
-        width: 100%;
-        height: 200px;
-    }
-    
-    #email{
-        width: 100%;
-    }
-    
-    input,
-    select,
-    option,
-    button,
-    textarea{
-         background-color: transparent;
-         border: none;
-         resize: none;
-    }
-    
-    textarea:focus, input:focus{
-        outline: none;
-    }
-    
-    ::-webkit-input-placeholder{color: #6d1d1d; }
-    ::-moz-placeholder{color: #6d1d1d;}
-    :-ms-input-placeholder{color: #6d1d1d;}
-    :-o-input-placeholder {color: #6d1d1d;}
     
     .rsvp {
     text-indent: 1em;
@@ -690,37 +526,11 @@ nav a:hover {
         left: 47%;
     }
     
-    #rsvpForm{
-        padding: 13%;
-        padding-top: 5%;
-    }
-    
-    #rsvpFormShell{
-        width: 650px;
-        height: 690px;
-        font-size: 25px;
-    }
-    
-    #cancel{
-        bottom: 68px;
-        right: 100px;
-        width: 110px;
-        height: auto;
-    }
-    
-    #firstName,
-    #lastName{
-        width: 150px;
-        text-align: center;
-    }
-    
-    #comments{
-        width: 100%;
-        height: 200px;
-    }
-    
-    #email{
-        width: 100%;
+    #rsvpFormWrapper{
+        top: 6594px;
+        left: 50%;
+        /*width: 100%;*/
+        /*height: auto;*/
     }
 
 }
@@ -884,38 +694,24 @@ nav a:hover {
         left: 47%;
     }
     
-    #rsvpForm{
-        padding: 13%;
-        padding-top: 5%;
+    #rsvpFormWrapper{
+        top: 1000%;
+        left: 50%;
     }
     
-    #rsvpFormShell{
-        width: 325px;
-        height: 345px;
-        font-size: 10px;
-        line-height: 15px;
+    #planningBtn,
+    #registryBtn{
+        top: 1165%;
+        right: 17%;
+        font-size: 0.8rem;
     }
     
-    #cancel{
-        bottom: 42px;
-        right: -11px;
-        width: 110px;
-        height: auto;
+    #planningBtn{
+        transform: translateY(-15px);
     }
     
-    #firstName,
-    #lastName{
-        width: 80px;
-        text-align: center;
-    }
-    
-    #comments{
-        width: 100%;
-        height: 90px;
-    }
-    
-    #email{
-        width: 100%;
+    #registryBtn{
+        transform: translateY(15px);
     }
 }
 
@@ -1069,61 +865,24 @@ nav a:hover {
         top: 7734px;
         left: 40%;
     }
-    
-    #rsvpForm{
-        padding: 13%;
-        padding-top: 5%;
+
+    #rsvpFormWrapper{
+        top: 7150px;
+        left: 50%;
     }
     
-    #rsvpFormShell{
-        width: 650px;
-        height: 690px;
-        font-size: 25px;
+    #planningBtn,
+    #registryBtn{
+        top: 7796px;
+        right: 35%;
     }
     
-    #cancel{
-        bottom: 50px;
-        right: 100px;
-        width: 120px;
-        height: auto;
+    #planningBtn{
+        transform: translateY(-25px);
     }
     
-    #firstName,
-    #lastName{
-        width: 150px;
-        text-align: center;
-    }
-    
-    #comments{
-        width: 100%;
-        height: 200px;
-    }
-    
-    #email{
-        width: 100%;
-    }
-    
-    input,
-    select,
-    option,
-    button,
-    textarea{
-         background-color: transparent;
-         border: none;
-         resize: none;
-    }
-    
-    textarea:focus, input:focus{
-        outline: none;
-    }
-    
-    ::-webkit-input-placeholder{color: #6d1d1d; }
-    ::-moz-placeholder{color: #6d1d1d;}
-    :-ms-input-placeholder{color: #6d1d1d;}
-    :-o-input-placeholder {color: #6d1d1d;}
-    
-    .rsvp {
-    text-indent: 1em;
+    #registryBtn{
+        transform: translateY(25px);
     }
 }
 

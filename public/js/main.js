@@ -25,10 +25,11 @@ $(document).ready(function(){
 		$scrollDown = $('#scrollDown'),
 		$text = $('#text'),
 		$plane = $('#Plane'),
-		rsvpForm = $("#rsvpForm"),
-		rsvpFormShell = $("#rsvpFormShell"),
+		rsvpForm = $("#rsvpFormWrapper"),
 		cancel = $("#cancel"),
 	    rsvpSign = $("#rsvpSign"),
+	    planningBtn = $('#planningBtn'),
+	    registryBtn = $('#registryBtn'),
 	    device = $('#device'),
 	    rotateMsg = $('#rotateMsg'),
 	    check = $('#check');
@@ -42,7 +43,10 @@ $(document).ready(function(){
 		planeDuration,
 		sunMovementDuration,
 		sunColorDuration,
-		balloonDuration
+		balloonDuration,
+		rsvpFormXOffset,
+		thirdTextXOffset,
+		thirdTextYOffset
 		;
 	
 	function orientationChange() {
@@ -69,6 +73,9 @@ $(document).ready(function(){
 				sunMovementDuration = 4000;
 				sunColorDuration = 4500;
 				balloonDuration = 4500;
+				rsvpFormXOffset = '215%';
+				thirdTextXOffset = '-=20px';
+				thirdTextYOffset = '+=20px';
 			}
 			else if(width > 669 && width <= 1140){
 				balloonFloatDown = '-76%';
@@ -80,6 +87,9 @@ $(document).ready(function(){
 				sunMovementDuration = 4000;
 				sunColorDuration = 4500;
 				balloonDuration = 4500;
+				rsvpFormXOffset = '215%';
+				thirdTextXOffset = '-=20px';
+				thirdTextYOffset = '+=20px';
 			}
 			else if(width > 1140){
 				balloonFloatDown = '-83%';
@@ -91,6 +101,9 @@ $(document).ready(function(){
 				sunMovementDuration = 8000;
 				sunColorDuration = 7000;
 				balloonDuration = 7000;
+				rsvpFormXOffset = '200%';
+				thirdTextXOffset = '+=80px';
+				thirdTextYOffset = '+=60px';
 			}
 		
 			//initialize scroll magic controller
@@ -100,7 +113,7 @@ $(document).ready(function(){
 			var BalloonIntroTL = new TimelineMax();
 		
 				BalloonIntroTL
-					.set(rsvpFormShell, {autoAlpha: 0, scale: 0.1})
+					.set(rsvpForm, {autoAlpha: 1, x: rsvpFormXOffset})
 					.set($text, {autoAlpha: 0})
 					.set($PLinBalloon, {y: '-150%', autoAlpha: 1, scale: 1.8, transformOrigin: 'bottom center'})
 					.set($scrollDown, {x: '-=80px'})
@@ -119,7 +132,7 @@ $(document).ready(function(){
 					.to($sandBag1, 1, {rotation: 0})
 					.fromTo($sandBag3, 3, {rotation: -5, transformOrigin: 'top center'}, {rotation: 5}, '-=4')
 					.to($sandBag3, 1, {rotation: 0}, '-=4')
-					.to($PLinBalloon, 0.5, {x: balloonMoveLeft, y: balloonMoveUp, scale: 1, ease: Power1.easeInOut}, '-=1')
+					.to($PLinBalloon, 0.5, {x: balloonMoveLeft, y: balloonMoveUp, scale: 1, force3D:false, ease: Power1.easeInOut}, '-=1')
 					.to($scrollDown, 1, {autoAlpha: 1, x: '0px', ease: Power4.easeInOut}, '-=1');
 		
 			//on scroll, hide scroll down command, and begin to move clouds up at different speeds
@@ -225,7 +238,7 @@ $(document).ready(function(){
 				SecondTextTL			
 					.to($text, 1, {x: '+=20px', autoAlpha: 1, ease: Power4.easeInOut})
 					.to($text, 1, {x: '+=10px', autoAlpha: 0, ease: Power4.easeInOut}, '+=2')
-					.set($text, {x: '+=60px', y:'-=20px', text: "Will you join us?"});
+					.set($text, {x: thirdTextXOffset, y: thirdTextYOffset, text: "Will you join us?"});
 		
 		    var SecondTextScene = new ScrollMagic.Scene({
 		    	triggerElement: '#Cloud4',
@@ -239,7 +252,9 @@ $(document).ready(function(){
 		    var ThirdTextTL = new TimelineMax();
 		
 				ThirdTextTL		
-					.to($text, 0.3, {x: '+=30px', autoAlpha: 1, ease: Power4.easeInOut});
+					.to($text, 0.3, {x: '+=30px', autoAlpha: 1, ease: Power4.easeInOut})
+					.to(planningBtn, 0.5, {autoAlpha: 1, x: '+=20px', ease: Power3.easeInOut}, '+=0.5')
+					.to(registryBtn, 0.5, {autoAlpha: 1, x: '+=20px', ease: Power3.easeInOut});
 		
 		    var ThirdTextScene = new ScrollMagic.Scene({
 		    	triggerElement: '#islandGround2',
@@ -252,62 +267,7 @@ $(document).ready(function(){
 		
 			//-----------RSVP
 			rsvpSign.on('mouseover', animateSign);
-			rsvpSign.on("click", openRSVP);
-			cancel.on('click', closeRSVP);
-	
-			//Sending Emails
-			rsvpForm.on('submit', function (event) {
-			    event.preventDefault();
-			    console.log("Form Submitted");
-		
-			    var firstName = $('#firstName').val(),
-			    	lastName = $('#lastName').val(),
-			    	email = $('#email').val(),
-			    	attending = $('#attending').val(),
-			    	foodAllergies = $('#foodAllergies').val(),
-			    	comments = $('#comments').val();
-		
-			    if(validateForm()){
-			    	sendRSVP(firstName, lastName, email, attending, foodAllergies, comments);
-			    	closeRSVP();
-		
-			    	emailSentMessageTL = new TimelineMax();
-		
-			    		emailSentMessageTL
-			    			.to($text, 1, {x: '+=10px', autoAlpha: 0, ease: Power4.easeInOut})
-							.set($text, {x: '-=160px', y:'-=10px', text: "Thanks! Check your email!"})
-							.to($text, 1, {x: '+=20px', autoAlpha: 1, ease: Power4.easeInOut});
-			    } 
-		
-			    function validateForm(){
-					if(firstName === ""){
-						alert("Please include your first name.");
-						return false;
-					}
-					else if(lastName === ""){
-						alert("Please include your last name.");
-						return false;
-					}
-					else if(!validateEmail(email)){
-						alert("Please include a valid email address.");
-						return false;
-					}
-					else{
-						return true;
-					}
-				}  
-		
-				function validateEmail(mail){  
-					var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-				    
-				    if(mail.match(mailFormat)){
-				    	return true;
-				    }
-				    else{
-				    	return false;
-				    }
-				} 
-			 });
+			 
 	    }else{
 	    	portraitModeCnt += 1;
 	    	
@@ -327,65 +287,20 @@ $(document).ready(function(){
 	    }
 	}
   
-window.addEventListener('orientationchange', orientationChange);
-  
-orientationChange();
-
-function animateSign(e){
-	rsvpTL = new TimelineMax();
-		
-	rsvpTL
-		.set(rsvpSign, {transformOrigin: 'bottom center'})
-		.fromTo(rsvpSign, 0.2, {scale: 1}, {scale: 1.05})
-		.fromTo(rsvpSign, 0.05, {rotation: 0}, {rotation:3})
-		.fromTo(rsvpSign, 0.1, {rotation: 3}, {rotation: -3, repeat: 2, yoyo: true})
-		.fromTo(rsvpSign, 0.05, {rotation: -3}, {rotation: 0})
-		.fromTo(rsvpSign, 0.2, {scale: 1.05}, {scale:1});
-}
+	window.addEventListener('orientationchange', orientationChange);
+	  
+	orientationChange();
+	
+	function animateSign(e){
+		rsvpTL = new TimelineMax();
 			
-function openRSVP(e){
-	TweenMax.to(rsvpFormShell, 0.4 , {autoAlpha: 1, scale: 1.2, ease: Power4.easeIn});
-	rsvpSign.off('mouseover', animateSign);
-	rsvpSign.off("click", openRSVP);
-	rsvpSign.css({
-		"cursor": "default"
-	});
-	
-	console.log("RSVP opened");
-}
-		
-function closeRSVP(e){
-	TweenMax.to(rsvpFormShell, 0.4 , {autoAlpha: 0, scale: 0.1, ease: Power4.easeOut});
-	rsvpSign.on('mouseover', animateSign);
-	rsvpSign.on("click", openRSVP);
-	rsvpSign.css({
-		"cursor": "pointer"
-	});
-				
-	console.log("RSVP closed");
-}
-
-function sendRSVP(firstName, lastName, email, attending, foodAllergies, comments){
-		
-	if(attending === "yes"){
-		emailjs.send("gmail","rsvpAccept",{
-			firstName: firstName, 
-			lastName: lastName,
-			email: email,
-			attending: attending,
-			foodAllergies: foodAllergies,
-			comments: comments
-		});
-	}else{
-		emailjs.send("gmail","rsvpDecline",{
-			firstName: firstName, 
-			lastName: lastName,
-			email: email,
-			attending: attending,
-			foodAllergies: foodAllergies,
-			comments: comments
-		});
+		rsvpTL
+			.set(rsvpSign, {transformOrigin: 'bottom center'})
+			.fromTo(rsvpSign, 0.2, {scale: 1}, {scale: 1.05})
+			.fromTo(rsvpSign, 0.05, {rotation: 0}, {rotation:3})
+			.fromTo(rsvpSign, 0.1, {rotation: 3}, {rotation: -3, repeat: 2, yoyo: true})
+			.fromTo(rsvpSign, 0.05, {rotation: -3}, {rotation: 0})
+			.fromTo(rsvpSign, 0.2, {scale: 1.05}, {scale:1});
 	}
-}
-	
+			
 });
