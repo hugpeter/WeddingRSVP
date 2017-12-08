@@ -273,18 +273,6 @@ html {
         cursor: pointer;
     }
     
-    #rsvpFormWrapper{
-        position: absolute;
-        transform: translateX(-50%);
-        z-index: 999;
-        opacity: 0;
-        background-color: white;
-        border-radius: .28571429rem;
-        padding: 20px;
-        border: 1px solid grey;
-        border: 1px solid rgba(34,36,38,.15);
-    }
-    
     #planningBtn,
     #registryBtn{
         position: absolute;
@@ -302,7 +290,7 @@ html {
     }
     
     .rsvp {
-    text-indent: 1em;
+        text-indent: 1em;
     }
     
     #rotateMsg,
@@ -694,11 +682,6 @@ html {
         left: 47%;
     }
     
-    #rsvpFormWrapper{
-        top: 1000%;
-        left: 50%;
-    }
-    
     #planningBtn,
     #registryBtn{
         top: 1165%;
@@ -865,16 +848,14 @@ html {
         top: 7734px;
         left: 40%;
     }
-
-    #rsvpFormWrapper{
-        top: 7150px;
-        left: 50%;
-    }
     
     #planningBtn,
     #registryBtn{
-        top: 7796px;
-        right: 35%;
+        top: 7725px;
+        left: 75%;
+        font-size: 2rem;
+        height: 33px;
+        width: auto;
     }
     
     #planningBtn{
