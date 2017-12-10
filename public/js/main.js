@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	
 	var landscapeModeCnt = 0;
 	var portraitModeCnt = 0;
 	
@@ -50,11 +49,9 @@ $(document).ready(function(){
 		;
 	
 	function orientationChange() {
-		//get device width
-		// var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-		var width = screen.width;
-		var height = screen.height;
-		
+		//get device width/height
+		var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+		var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
 		//landscape
 	    if(width > height){
 			landscapeModeCnt += 1;
@@ -63,7 +60,7 @@ $(document).ready(function(){
 	    		window.location.reload();
 	    	}
 	    	
-	    	if(width <= 668){
+	    	if(width <= 668){ //iphone 6,7,8
 				balloonFloatDown = '-73%';
 				balloonMoveLeft = '-78%';
 				balloonMoveUp = '-83%';
@@ -77,7 +74,7 @@ $(document).ready(function(){
 				thirdTextXOffset = '-=20px';
 				thirdTextYOffset = '+=20px';
 			}
-			else if(width > 669 && width <= 1140){
+			else if(width > 669 && width <= 1140){ //iphone plus 6,7,8
 				balloonFloatDown = '-76%';
 				balloonMoveLeft = '-82%';
 				balloonMoveUp = '-83%';
@@ -91,7 +88,21 @@ $(document).ready(function(){
 				thirdTextXOffset = '-=20px';
 				thirdTextYOffset = '+=20px';
 			}
-			else if(width > 1140){
+			else if(width > 1141 && width <= 1500){ //laptop
+				balloonFloatDown = '-72%';
+				balloonMoveLeft = '-78%';
+				balloonMoveUp = '-78%';
+				scrollDownHideDuration = 100;
+				text1Duration = 1000;
+				planeDuration = 1500;
+				sunMovementDuration = 8000;
+				sunColorDuration = 7000;
+				balloonDuration = 7000;
+				rsvpFormXOffset = '200%';
+				thirdTextXOffset = '+=80px';
+				thirdTextYOffset = '+=60px';
+			}
+			else if(width > 1501){ //27inch monitor
 				balloonFloatDown = '-83%';
 				balloonMoveLeft = '-85%';
 				balloonMoveUp = '-83%';
@@ -258,7 +269,7 @@ $(document).ready(function(){
 		
 		    var ThirdTextScene = new ScrollMagic.Scene({
 		    	triggerElement: '#islandGround2',
-		    	triggerHook: 0.9,
+		    	triggerHook: 0.95,
 		    	duration: 0
 		    })
 		    //.addIndicators()

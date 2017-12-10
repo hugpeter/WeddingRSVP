@@ -698,8 +698,177 @@ html {
     }
 }
 
+/*1440Xheight*/
+@media only screen and (min-width: 1400px) and (orientation: landscape) {
+    #SunSetSky
+    {
+        width: 100vw;
+        height: 1581px;
+        top: 6000px;
+        left: 0vw;
+    }
+    
+    #introHook{
+        width: 50px;
+        height: 20px;
+        top: 0;
+        left: 50%;
+    }
+    
+    #sunshine{
+        width: 500px;
+        height: 500px;
+        top: 40px;
+        right: 12vw;
+    }
+    
+    #PLinBalloon{
+        width: 1700px;
+        height: 2500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -90%);
+    }
+    
+    #scrollDown{
+        left: 51%;
+        top: 41%;
+        font-size: 8em;
+    }
+    
+    #text{
+        left: 31%;
+        top: 56%;
+        font-size: 4em;
+        height: 35%;
+    }
+    
+    #MainCloud1
+    {
+        width: 45vw;
+        height: 46vh;
+        top: 60%;
+        left: 48%;
+    }
+    
+    #MainCloud2
+    {
+        width: 10vw;
+        height: 100vh;
+        top: 76vh;
+        right: 14vw;
+    }
+    
+    #BackLeftCloud1
+    {
+        width: 950px;
+        height: 755px;
+        top: -310px;
+        left: -100px;
+    }
+    
+    #BackLeftCloud2
+    {
+        width: 600px;
+        height: 400px;
+        bottom: -280px;
+        left: 50px;
+    }
+    
+    #Cloud1
+    {
+        width: 500px;
+        height: 1000px;
+        right: -10%;
+        top: 150%;
+    }
+    
+    #Cloud2
+    {
+        width: 830px;
+        height: 860px;
+        top: 300%;
+        left: -200px;
+    }
+    
+    #Plane
+    {
+        width: 750px;
+        height: 220px;
+        top: 50%;
+        left: -900px;
+    }
+    
+    #Cloud3{
+        width: 450px;
+        height: 400px;
+        top: 345%;
+        right: 430px;
+    }
+    
+    #Cloud4{
+        width: 900px;
+        height: 400px;
+        top: 420%;
+        right: -300px;
+    }
+    
+    #PTYSkyline
+    {
+        width: 100.5vw;
+        height: 675px;
+        top: 6920px;
+        left: -0.25vw;
+    }
+    
+    #islandGround{
+        width: 100vw;
+        height: 150px;
+        top: 7445px;
+        left: 0px;
+    }
+    
+    #islandGround2{
+        width: 330px;
+        height: 50px;
+        top: 7527px;
+        left: 80px;
+    }
+    
+    #palmTree{
+        width: 500px;
+        height: 760px;
+        top: 6790px;
+        right: -150px;
+    }
+    
+    #rsvpSign{
+        width: 205px;
+        height: 186px;
+        top: 7385px;
+        left: 48%;
+    }
+    
+    #planningBtn,
+    #registryBtn{
+        top: 7395px;
+        left: 75%;
+        font-size: 1.7rem;
+        height: 33px;
+        width: auto;
+    }
+    
+    #planningBtn{
+        transform: translateY(-25px);
+    }
+    
+    #registryBtn{
+        transform: translateY(25px);
+    }
+}
+
 /*1920X1080*/
-@media only screen and (min-width: 1500px) and (orientation: landscape) {
+@media only screen and (min-width: 2000px) and (orientation: landscape) {
     #SunSetSky
     {
         width: 100vw;
