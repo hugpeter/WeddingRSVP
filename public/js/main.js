@@ -29,6 +29,7 @@ $(document).ready(function(){
 	    rsvpSign = $("#rsvpSign"),
 	    planningBtn = $('#planningBtn'),
 	    registryBtn = $('#registryBtn'),
+	    photosBtn = $('#photosBtn'),
 	    device = $('#device'),
 	    rotateMsg = $('#rotateMsg'),
 	    check = $('#check');
@@ -265,7 +266,8 @@ $(document).ready(function(){
 				ThirdTextTL		
 					.to($text, 0.3, {x: '+=30px', autoAlpha: 1, ease: Power4.easeInOut})
 					.to(planningBtn, 0.5, {autoAlpha: 1, x: '+=20px', ease: Power3.easeInOut}, '+=0.5')
-					.to(registryBtn, 0.5, {autoAlpha: 1, x: '+=20px', ease: Power3.easeInOut});
+					.to(registryBtn, 0.5, {autoAlpha: 1, x: '+=20px', ease: Power3.easeInOut})
+					.to(photosBtn, 0.5, {autoAlpha: 1, x: '+=20px', ease: Power3.easeInOut});
 		
 		    var ThirdTextScene = new ScrollMagic.Scene({
 		    	triggerElement: '#islandGround2',

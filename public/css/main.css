@@ -274,7 +274,8 @@ html {
     }
     
     #planningBtn,
-    #registryBtn{
+    #registryBtn,
+    #photosBtn{
         position: absolute;
         z-index: 990;
         opacity: 0;
@@ -285,7 +286,8 @@ html {
     }
     
     #planningBtn:hover,
-    #registryBtn:hover{
+    #registryBtn:hover,
+    #photosBtn:hover{
         border-bottom: 1px solid white;
     }
     
@@ -515,7 +517,8 @@ html {
     }
     
     #planningBtn,
-    #registryBtn{
+    #registryBtn,
+    #photosBtn{
         top: 1225%;
         right: 20%;
         font-size: 0.8rem;
@@ -527,6 +530,10 @@ html {
     
     #registryBtn{
         transform: translateY(15px);
+    }
+    
+    #photosBtn{
+        transform: translateY(45px);
     }
 
 }
@@ -691,7 +698,8 @@ html {
     }
     
     #planningBtn,
-    #registryBtn{
+    #registryBtn,
+    #photosBtn{
         top: 1165%;
         right: 17%;
         font-size: 0.8rem;
@@ -703,6 +711,10 @@ html {
     
     #registryBtn{
         transform: translateY(15px);
+    }
+    
+    #photosBtn{
+        transform: translateY(45px);
     }
 }
 
@@ -858,7 +870,8 @@ html {
     }
     
     #planningBtn,
-    #registryBtn{
+    #registryBtn,
+    #photosBtn{
         top: 7395px;
         left: 75%;
         font-size: 1.7rem;
@@ -872,6 +885,10 @@ html {
     
     #registryBtn{
         transform: translateY(25px);
+    }
+    
+    #photosBtn{
+        transform: translateY(75px);
     }
 }
 
@@ -1027,7 +1044,8 @@ html {
     }
     
     #planningBtn,
-    #registryBtn{
+    #registryBtn,
+    #photosBtn{
         top: 7725px;
         left: 75%;
         font-size: 2rem;
@@ -1041,6 +1059,10 @@ html {
     
     #registryBtn{
         transform: translateY(25px);
+    }
+    
+    #photosBtn{
+        transform: translateY(75px);
     }
 }
 

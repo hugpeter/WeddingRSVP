@@ -17,6 +17,11 @@ router.get("/registry/", function(req, res){
    res.render("registry.ejs");
 });
 
+//photos
+router.get("/photos/", function(req, res){
+   res.render("photos.ejs");
+});
+
 //rsvp
 router.get("/rsvp/", function(req, res){
    res.render("rsvp.ejs");
