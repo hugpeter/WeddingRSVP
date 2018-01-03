@@ -61,6 +61,9 @@ $(document).ready(function(){
 	    		window.location.reload();
 	    	}
 	    	
+	    	//Calculate all elements' Height and assign their respective top values.
+	    	assignTopValues();
+	    	
 	    	if(width <= 668){ //iphone 6,7,8
 				balloonFloatDown = '-73%';
 				balloonMoveLeft = '-78%';
@@ -299,7 +302,13 @@ $(document).ready(function(){
 	    			.to(check, 0.2, {autoAlpha: 1, ease: Power4.easeIn});
 	    }
 	}
-  
+	
+	function assignTopValues(){
+		//This function takes the main elements of the page and calculates each of their heights.
+		//It takes these heights and uses them to assign each elements' top value
+		
+	}
+	
 	window.addEventListener('orientationchange', orientationChange);
 	  
 	orientationChange();
