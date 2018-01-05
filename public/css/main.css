@@ -16,321 +16,325 @@ html {
     text-shadow: none;
 }
 
-    body, html{
-        background-color: #00D4FF;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        width: 100vw;
-        height: auto;
-        padding: 0;
-        margin: 0;
-        z-index: -11;
+body, html {
+    background-color: #00D4FF;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100vw;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    z-index: -11;
+}
+    
+svg {
+    display: block;
+}
+    
+div {
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes float {
+    from{}
+    to{
+        transform: translateY(20px);
     }
+}
     
+.cloudFloat1 {
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
     
-    svg {
-        display: block;
-    }
+.cloudFloat2 {
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
     
-    div{
-        padding: 0;
-        margin: 0;
-    }
+.cloudFloat3 {
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
     
-    @keyframes float {
-        from{}
-        to{
-            transform: translateY(20px);
-        }
-    }
+.cloudFloat4 {
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
     
-    .cloudFloat1{
-        animation-name: float;
-        animation-duration: 2s;
-        animation-delay: 0s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
+#introHook {
+    width: 50px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+}
     
-    .cloudFloat2{
-        animation-name: float;
-        animation-duration: 2s;
-        animation-delay: 0.5s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
+#sunshine {
+    position: fixed;
+    text-align: center;
+    z-index: 0;
+    width: 30vw;
+    height: auto;
+    top: 15%;
+    right: 15%;
+}
     
-    .cloudFloat3{
-        animation-name: float;
-        animation-duration: 2s;
-        animation-delay: 1s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
+#PLinBalloon {
+    position: fixed;
+    left: 50vw;
+    top: 10vh;
+    transform: translateX(-50%);
+    width: 120vw;
+    height: auto;
+    z-index: 5;
+    opacity: 0;
+}
     
-    .cloudFloat4{
-        animation-name: float;
-        animation-duration: 2s;
-        animation-delay: 1.5s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
+#scrollDown {
+    position: fixed;
+    right: 8vw;
+    top: 36%;
+    font-size: 8vw;
+    color: white;
+    font-family: 'Berkshire Swash', cursive;
+    z-index: 1;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: 0;
+}
     
-    #introHook{
-        width: 50px;
-        height: 20px;
-        position: absolute;
-        top: 0;
-    }
+#text {
+    position: fixed;
+    left: 35%;
+    top: 58%;
+    font-size: 3vw;
+    width: 40%;
+    height: 50%;
+    line-height: 4vw;
+    color: white;
+    font-family: 'Berkshire Swash', cursive;
+    z-index: 20;
+    opacity: 0;
+}
     
-    #sunshine{
-        position: fixed;
-        text-align: center;
-        z-index: 0;
-        width: 30vw;
-        height: auto;
-        top: 15%;
-        right: 15%;
-    }
+#MainCloud1 {
+    position: absolute;
+    top: 57%;
+    right: 8vw;
+    width: 45vw;
+    height: auto;
+    z-index: 2;
+}
     
-    #PLinBalloon{
-        position: fixed;
-        text-align: center;
-        z-index: 5;
-        opacity: 0;
-    }
+#MainCloud2 {
+    position: absolute;
+    top: 70%;
+    right: 15vw;
+    width: 12vw;
+    height: auto;
+    z-index: 4;
+}
     
-    #scrollDown{
-        position: fixed;
-        color: white;
-        font-family: 'Berkshire Swash', cursive;
-        z-index: 1;
-        animation-name: float;
-        animation-duration: 2s;
-        animation-delay: 0s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-        opacity: 0;
-    }
+#BackLeftCloud1 {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 45vw;
+    height: auto;
+    z-index: 0;
+}
     
-    #text{
-        position: fixed;
-        color: white;
-        font-family: 'Berkshire Swash', cursive;
-        z-index: 20;
-        opacity: 0;
-    }
+#BackLeftCloud2 {
+    position: absolute;
+    top: 80%;
+    left: -10vw;
+    width: 30vw;
+    height: auto;
+    z-index: 6;
+}
     
-    #MainCloud1
-    {
-        position: absolute;
-        top: 57%;
-        right: 8vw;
-        width: 45vw;
-        height: auto;
-        z-index: 2;
-    }
+#Cloud1 {
+    position: absolute;
+    top: 180%;
+    right: -2vw;
+    width: 30vw;
+    height: auto;
+    z-index: 2;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
     
-    #MainCloud2
-    {
-        position: absolute;
-        top: 70%;
-        right: 15vw;
-        width: 12vw;
-        height: auto;
-        z-index: 4;
-    }
+#Cloud2 {
+    position:absolute;
+    top: 330%;
+    left: -10vw;
+    width: 47vw;
+    height: auto;
+    z-index: 2;
+}
     
-    #BackLeftCloud1
-    {
-        position: absolute;
-        top: -20%;
-        left: -10%;
-        width: 45vw;
-        height: auto;
-        z-index: 0;
-    }
+#Plane {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: -50vw;
+    width: 50vw;
+    height: auto;
+    opacity: 1;
+}
     
-    #BackLeftCloud2
-    {
-        position: absolute;
-        top: 80%;
-        left: -10vw;
-        width: 30vw;
-        height: auto;
-        z-index: 6;
-    }
+#Cloud3 {
+    position: absolute;
+    top: 375%;
+    left: 40vw;
+    width: 25vw;
+    height: auto;
+    z-index: 0;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
     
-    #Cloud1
-    {
-        position: absolute;
-        top: 180%;
-        right: -2vw;
-        width: 30vw;
-        height: auto;
-        z-index: 2;
-        animation-name: float;
-        animation-duration: 2s;
-        animation-delay: 0s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
+#Cloud4 {
+    position: absolute;
+    top: 430%;
+    right: -10vw;
+    width: 35vw;
+    height: auto;
+    z-index: 0;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
     
-    #Cloud2
-    {
-        position:absolute;
-        top: 330%;
-        left: -10vw;
-        width: 47vw;
-        height: auto;
-        z-index: 2;
-    }
+#SunSetSky {
+    position: absolute;
+    top: 700%;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+}
     
-    #Plane
-    {
-        position: fixed;
-        z-index: 1;
-        top: 50%;
-        left: -50vw;
-        width: 50vw;
-        height: auto;
-        opacity: 1;
-    }
+#PTYSkyline {
+    position: absolute;
+    top: 1000%;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+}
     
-    #Cloud3{
-        position: absolute;
-        top: 375%;
-        left: 40vw;
-        width: 25vw;
-        height: auto;
-        z-index: 0;
-        animation-name: float;
-        animation-duration: 2s;
-        animation-delay: 1.5s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
+#islandGround {
+    position: absolute;
+    top: 1063%;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    z-index: 3;
+    margin: 0;
+    padding: 0;
+}
     
-    #Cloud4{
-        position: absolute;
-        top: 430%;
-        right: -10vw;
-        width: 35vw;
-        height: auto;
-        z-index: 0;
-        animation-name: float;
-        animation-duration: 2s;
-        animation-delay: 1.5s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-    }
+#palmTree {
+    position: absolute;
+    top: 992%;
+    right: -5vw;
+    width: 30vw;
+    height: auto;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+}
     
-    #SunSetSky
-    {
-        position: absolute;
-        top: 892%;
-        left: 0;
-        width: 100vw;
-        height: auto;
-        z-index: -1;
-        margin: 0;
-        padding: 0;
-    }
+#rsvpSign {
+    position: absolute;
+    top: 1057%;
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 15vw;
+    height: auto;
+    z-index: 25;
+    cursor: pointer;
+}
+
+#planningBtn,
+#registryBtn,
+#photosBtn {
+    position: absolute;
+    top: 960%;
+    right: 18vw;
+    z-index: 990;
+    opacity: 0;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+}
     
-    #PTYSkyline
-    {
-        position: absolute;
-        top: 1000%;
-        left: 0;
-        width: 100vw;
-        height: auto;
-        z-index: 2;
-        margin: 0;
-        padding: 0;
-    }
+#planningBtn:hover,
+#registryBtn:hover,
+#photosBtn:hover {
+    border-bottom: 1px solid white;
+}
+
+/*#planningBtn{*/
+/*    transform: translateY(-20px);*/
+/*}*/
     
-    #islandGround{
-        position: absolute;
-        top: 1063%;
-        left: 0;
-        width: 100vw;
-        height: auto;
-        z-index: 3;
-        margin: 0;
-        padding: 0;
-    }
+/*#registryBtn{*/
+/*    transform: translateY(20px);*/
+/*}*/
+
+/*#photosBtn{*/
+/*    transform: translateY(60px);*/
+/*}*/
     
-    #islandGround2{
-        position: absolute;
-        top: 1071%;
-        left: 10vw;
-        width: 20vw;
-        height: auto;
-        z-index: 7;
-        margin: 0;
-        padding: 0;
-    }
+.rsvp {
+    text-indent: 1em;
+}
     
-    #palmTree{
-        position: absolute;
-        top: 992%;
-        right: -5vw;
-        width: 30vw;
-        height: auto;
-        z-index: 5;
-        margin: 0;
-        padding: 0;
-    }
-    
-    #rsvpSign{
-        position: absolute;
-        top: 1057%;
-        left: 50vw;
-        transform: translateX(-50%);
-        width: 15vw;
-        height: auto;
-        z-index: 25;
-        cursor: pointer;
-    }
-    
-    #planningBtn,
-    #registryBtn,
-    #photosBtn{
-        position: absolute;
-        top: 1057%;
-        right: 30vw;
-        z-index: 990;
-        opacity: 0;
-        font-family: 'Berkshire Swash', cursive;
-        text-decoration: none;
-        color: white;
-        letter-spacing: 2px;
-    }
-    
-    #planningBtn:hover,
-    #registryBtn:hover,
-    #photosBtn:hover{
-        border-bottom: 1px solid white;
-    }
-    
-    .rsvp {
-        text-indent: 1em;
-    }
-    
-    #rotateMsg,
-    #device,
-    #check{
-        opacity: 0;
-    }
-    
+#rotateMsg,
+#device,
+#check {
+    opacity: 0;
+}
 
 /* ==========================================================================
    Media Queries
@@ -389,707 +393,21 @@ html {
 
 /*Iphone 6, 6s, 7, 8 - 375x667*/
 @media only screen and (min-width: 569px) and (orientation: landscape) {
-    
-    #introHook{
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    /*#sunshine{*/
-    /*    width: 210px;*/
-    /*    height: 210px;*/
-    /*    top: 40px;*/
-    /*    right: 12vw;*/
-    /*}*/
-    
-    #PLinBalloon{
-        text-align: center;
-        width: 800px;
-        height: 1300px;
-        top: 75%;
-        left: 50%;
-        transform: translate(-50%, -90%);
-    }
-    
-    #scrollDown{
-        left: 55%;
-        top: 36%;
-        color: white;
-        font-size: 6em;
-    }
-    
-    #text{
-        left: 35%;
-        top: 58%;
-        color: white;
-        font-size: 1.8em;
-        width: 50%;
-        height: 50%;
-        line-height: 1.5em;
-    }
-    
-    /*#MainCloud1*/
-    /*{*/
-    /*    width: 41vw;*/
-    /*    height: 100vh;*/
-    /*    top: 58%;*/
-    /*    left: 50%;*/
-    /*    text-align: center;*/
-    /*    z-index: 2;*/
-    /*}*/
-    
-    /*#MainCloud2*/
-    /*{*/
-    /*    width: 10vw;*/
-    /*    height: 100vh;*/
-    /*    top: 71vh;*/
-    /*    right: 15vw;*/
-    /*}*/
-    
-    /*#BackLeftCloud1*/
-    /*{*/
-    /*    width: 475px;*/
-    /*    height: 800px;*/
-    /*    top: -275px;*/
-    /*    left: -110px;*/
-    /*}*/
-    
-    /*#BackLeftCloud2*/
-    /*{*/
-    /*    width: 200px;*/
-    /*    height: 170px;*/
-    /*    bottom: -104px;*/
-    /*    left: 50px;*/
-    /*}*/
-    
-    /*#Cloud1*/
-    /*{*/
-    /*    width: 200px;*/
-    /*    height: 1000px;*/
-    /*    right: -10%;*/
-    /*    top: 150%;*/
-    /*    text-align: center;*/
-    /*}*/
-    
-    /*#Cloud2*/
-    /*{*/
-    /*    width: 310px;*/
-    /*    height: 610px;*/
-    /*    top: 360%;*/
-    /*    left: -53px;*/
-    /*}*/
-    
-    /*#Plane*/
-    /*{*/
-    /*    width: 360px;*/
-    /*    height: 200px;*/
-    /*    top: 50%;*/
-    /*    left: -360px;*/
-    /*}*/
-    
-    /*#Cloud3{*/
-    /*    width: 200px;*/
-    /*    height: 100px;*/
-    /*    top: 397%;*/
-    /*    right: 200px;*/
-    /*}*/
-    
-    /*#Cloud4{*/
-    /*    width: 300px;*/
-    /*    height: 190px;*/
-    /*    top: 440%;*/
-    /*    right: -100px;*/
-    /*}*/
-    
-    /*#SunSetSky*/
-    /*{*/
-    /*    width: 100vw;*/
-    /*    height: 705px;*/
-    /*    top: 3980px;*/
-    /*    left: 0vw;*/
-    /*}*/
-    
-    /*#PTYSkyline*/
-    /*{*/
-        /*width: 104vw;*/
-        /*height: 313px;*/
-    /*    top: 4382px;*/
-    /*    left: -2vw;*/
-    /*}*/
-    
-    /*#islandGround{*/
-        /*width: 110vw;*/
-        /*height: 76px;*/
-    /*    top: 4620px;*/
-    /*    left: 0px;*/
-    /*}*/
-    
-    /*#islandGround2{*/
-    /*    width: 150px;*/
-    /*    height: 22px;*/
-    /*    top: 4660px;*/
-    /*    left: 57px;*/
-    /*}*/
-    
-    /*#palmTree{*/
-    /*    width: 200px;*/
-    /*    height: 330px;*/
-    /*    top: 4350px;*/
-    /*    right: -30px;*/
-    /*}*/
-    
-    /*#rsvpSign{*/
-    /*    width: 105px;*/
-    /*    height: 86px;*/
-    /*    top: 4595px;*/
-    /*    left: 47%;*/
-    /*}*/
-    
-    /*#planningBtn,*/
-    /*#registryBtn,*/
-    /*#photosBtn{*/
-    /*    top: 1225%;*/
-    /*    right: 20%;*/
-    /*    font-size: 0.8rem;*/
-    /*}*/
-    
-    #planningBtn{
-        transform: translateY(-15px);
-    }
-    
-    #registryBtn{
-        transform: translateY(15px);
-    }
-    
-    #photosBtn{
-        transform: translateY(45px);
-    }
 
 }
 
 /*iphone 6+, 6s+, 7+, 8+ - 414x736*/ 
 @media only screen and (min-width: 668px) and (orientation: landscape) {
     
-    #introHook{
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    /*#sunshine{*/
-    /*    width: 210px;*/
-    /*    height: 210px;*/
-    /*    top: 40px;*/
-    /*    right: 16vw;*/
-    /*}*/
-    
-    #PLinBalloon{
-        text-align: center;
-        width: 800px;
-        height: 1300px;
-        top: 75%;
-        left: 50%;
-        transform: translate(-50%, -90%);
-    }
-    
-    #scrollDown{
-        left: 53%;
-        top: 38%;
-        color: white;
-        font-size: 6em;
-    }
-    
-    #text{
-        left: 35%;
-        top: 55%;
-        color: white;
-        font-size: 2em;
-        width: 50%;
-        height: 50%;
-        line-height: 1.5em;
-    }
-    
-    /*#MainCloud1*/
-    /*{*/
-    /*    width: 41vw;*/
-    /*    height: 100vh;*/
-    /*    top: 58%;*/
-    /*    left: 50%;*/
-    /*    text-align: center;*/
-    /*    z-index: 2;*/
-    /*}*/
-    
-    /*#MainCloud2*/
-    /*{*/
-    /*    width: 10vw;*/
-    /*    height: 100vh;*/
-    /*    top: 71vh;*/
-    /*    right: 15vw;*/
-    /*}*/
-    
-    /*#BackLeftCloud1*/
-    /*{*/
-    /*    width: 475px;*/
-    /*    height: 800px;*/
-    /*    top: -275px;*/
-    /*    left: -110px;*/
-    /*}*/
-    
-    /*#BackLeftCloud2*/
-    /*{*/
-    /*    width: 200px;*/
-    /*    height: 170px;*/
-    /*    bottom: -104px;*/
-    /*    left: 50px;*/
-    /*}*/
-    
-    /*#Cloud1*/
-    /*{*/
-    /*    width: 200px;*/
-    /*    height: 210px;*/
-    /*    right: -10%;*/
-    /*    top: 167%;*/
-    /*    text-align: center;*/
-    /*}*/
-    
-    /*#Cloud2*/
-    /*{*/
-    /*    width: 310px;*/
-    /*    height: 610px;*/
-    /*    top: 400%;*/
-    /*    left: -53px;*/
-    /*}*/
-    
-    /*#Plane*/
-    /*{*/
-    /*    width: 360px;*/
-    /*    height: 200px;*/
-    /*    top: 50%;*/
-    /*    left: -360px;*/
-    /*}*/
-    
-    /*#Cloud3{*/
-    /*    width: 200px;*/
-    /*    height: 100px;*/
-    /*    top: 450%;*/
-    /*    right: 180px;*/
-    /*}*/
-    
-    /*#Cloud4{*/
-    /*    width: 300px;*/
-    /*    height: 190px;*/
-    /*    top: 520%;*/
-    /*    right: -100px;*/
-    /*}*/
-    
-    /*#SunSetSky*/
-    /*{*/
-    /*    width: 740px;*/
-    /*    height: 768px;*/
-    /*    top: 1000%;*/
-    /*    left: 0px;*/
-    /*}*/
-    
-    /*#PTYSkyline*/
-    /*{*/
-        /*width: 738px;*/
-        /*height: 339px;*/
-    /*    top: 1104%;*/
-    /*    left: 0px;*/
-    /*}*/
-    
-    /*#islandGround{*/
-        /*width: 736px;*/
-        /*height: 77px;*/
-    /*    top: 1178%;*/
-    /*    left: 0px;*/
-    /*}*/
-    
-    /*#islandGround2{*/
-    /*    width: 150px;*/
-    /*    height: 22px;*/
-    /*    top: 1185%;*/
-    /*    left: 77px;*/
-    /*}*/
-    
-    /*#palmTree{*/
-    /*    width: 200px;*/
-    /*    height: 330px;*/
-    /*    top: 1113%;*/
-    /*    right: -30px;*/
-    /*}*/
-    
-    /*#rsvpSign{*/
-    /*    width: 105px;*/
-    /*    height: 86px;*/
-    /*    top: 1170%;*/
-    /*    left: 47%;*/
-    /*}*/
-    
-    /*#planningBtn,*/
-    /*#registryBtn,*/
-    /*#photosBtn{*/
-    /*    top: 1165%;*/
-    /*    right: 17%;*/
-    /*    font-size: 0.8rem;*/
-    /*}*/
-    
-    #planningBtn{
-        transform: translateY(-15px);
-    }
-    
-    #registryBtn{
-        transform: translateY(15px);
-    }
-    
-    #photosBtn{
-        transform: translateY(45px);
-    }
 }
 
 /*1440Xheight*/
 @media only screen and (min-width: 1400px) and (orientation: landscape) {
-    /*#SunSetSky*/
-    /*{*/
-    /*    width: 100vw;*/
-    /*    height: 1581px;*/
-    /*    top: 6000px;*/
-    /*    left: 0vw;*/
-    /*}*/
     
-    #introHook{
-        width: 50px;
-        height: 20px;
-        top: 0;
-        left: 50%;
-    }
-    
-    /*#sunshine{*/
-    /*    width: 500px;*/
-    /*    height: 500px;*/
-    /*    top: 40px;*/
-    /*    right: 12vw;*/
-    /*}*/
-    
-    #PLinBalloon{
-        width: 1700px;
-        height: 2500px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -90%);
-    }
-    
-    #scrollDown{
-        left: 51%;
-        top: 41%;
-        font-size: 8em;
-    }
-    
-    #text{
-        left: 31%;
-        top: 56%;
-        font-size: 4em;
-        height: 35%;
-    }
-    
-    /*#MainCloud1*/
-    /*{*/
-    /*    width: 45vw;*/
-    /*    height: 46vh;*/
-    /*    top: 60%;*/
-    /*    left: 48%;*/
-    /*}*/
-    
-    /*#MainCloud2*/
-    /*{*/
-    /*    width: 10vw;*/
-    /*    height: 100vh;*/
-    /*    top: 76vh;*/
-    /*    right: 14vw;*/
-    /*}*/
-    
-    /*#BackLeftCloud1*/
-    /*{*/
-    /*    width: 950px;*/
-    /*    height: 755px;*/
-    /*    top: -310px;*/
-    /*    left: -100px;*/
-    /*}*/
-    
-    /*#BackLeftCloud2*/
-    /*{*/
-    /*    width: 600px;*/
-    /*    height: 400px;*/
-    /*    bottom: -280px;*/
-    /*    left: 50px;*/
-    /*}*/
-    
-    /*#Cloud1*/
-    /*{*/
-    /*    width: 500px;*/
-    /*    height: 1000px;*/
-    /*    right: -10%;*/
-    /*    top: 150%;*/
-    /*}*/
-    
-    /*#Cloud2*/
-    /*{*/
-    /*    width: 830px;*/
-    /*    height: 860px;*/
-    /*    top: 300%;*/
-    /*    left: -200px;*/
-    /*}*/
-    
-    /*#Plane*/
-    /*{*/
-    /*    width: 750px;*/
-    /*    height: 220px;*/
-    /*    top: 50%;*/
-    /*    left: -900px;*/
-    /*}*/
-    
-    /*#Cloud3{*/
-    /*    width: 450px;*/
-    /*    height: 400px;*/
-    /*    top: 345%;*/
-    /*    right: 430px;*/
-    /*}*/
-    
-    /*#Cloud4{*/
-    /*    width: 900px;*/
-    /*    height: 400px;*/
-    /*    top: 420%;*/
-    /*    right: -300px;*/
-    /*}*/
-    
-    /*#PTYSkyline*/
-    /*{*/
-        /*width: 100.5vw;*/
-        /*height: 675px;*/
-    /*    top: 6920px;*/
-    /*    left: -0.25vw;*/
-    /*}*/
-    
-    /*#islandGround{*/
-        /*width: 100vw;*/
-        /*height: 150px;*/
-    /*    top: 7445px;*/
-    /*    left: 0px;*/
-    /*}*/
-    
-    /*#islandGround2{*/
-    /*    width: 330px;*/
-    /*    height: 50px;*/
-    /*    top: 7527px;*/
-    /*    left: 80px;*/
-    /*}*/
-    
-    /*#palmTree{*/
-    /*    width: 500px;*/
-    /*    height: 760px;*/
-    /*    top: 6790px;*/
-    /*    right: -150px;*/
-    /*}*/
-    
-    /*#rsvpSign{*/
-    /*    width: 205px;*/
-    /*    height: 186px;*/
-    /*    top: 7385px;*/
-    /*    left: 48%;*/
-    /*}*/
-    
-    /*#planningBtn,*/
-    /*#registryBtn,*/
-    /*#photosBtn{*/
-    /*    top: 7395px;*/
-    /*    left: 75%;*/
-    /*    font-size: 1.7rem;*/
-    /*    height: 33px;*/
-    /*    width: auto;*/
-    /*}*/
-    
-    #planningBtn{
-        transform: translateY(-25px);
-    }
-    
-    #registryBtn{
-        transform: translateY(25px);
-    }
-    
-    #photosBtn{
-        transform: translateY(75px);
-    }
 }
 
 /*1920X1080*/
 @media only screen and (min-width: 1900px) and (orientation: landscape) {
-    /*#SunSetSky*/
-    /*{*/
-    /*    width: 100vw;*/
-    /*    height: 2000px;*/
-    /*    top: 6000px;*/
-    /*    left: 0vw;*/
-    /*}*/
     
-    #introHook{
-        width: 50px;
-        height: 20px;
-        top: 0;
-        left: 50%;
-    }
-    
-    /*#sunshine{*/
-    /*    width: 600px;*/
-    /*    height: 600px;*/
-    /*    top: 50px;*/
-    /*    right: 16vw;*/
-    /*}*/
-    
-    #PLinBalloon{
-        width: 2000px;
-        height: 2500px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -90%);
-    }
-    
-    #scrollDown{
-        left: 50%;
-        top: 40%;
-        font-size: 8em;
-    }
-    
-    #text{
-        left: 30%;
-        top: 55%;
-        font-size: 4em;
-        height: 50%;
-    }
-    
-    /*#MainCloud1*/
-    /*{*/
-    /*    width: 40vw;*/
-    /*    height: 100vh;*/
-    /*    top: 60%;*/
-    /*    left: 46%;*/
-    /*}*/
-    
-    /*#MainCloud2*/
-    /*{*/
-    /*    width: 10vw;*/
-    /*    height: 100vh;*/
-    /*    top: 73vh;*/
-    /*    right: 20vw;*/
-    /*}*/
-    
-    /*#BackLeftCloud1*/
-    /*{*/
-    /*    width: 950px;*/
-    /*    height: 755px;*/
-    /*    top: -300px;*/
-    /*    left: -110px;*/
-    /*}*/
-    
-    /*#BackLeftCloud2*/
-    /*{*/
-    /*    width: 600px;*/
-    /*    height: 400px;*/
-    /*    bottom: -300px;*/
-    /*    left: 50px;*/
-    /*}*/
-    
-    /*#Cloud1*/
-    /*{*/
-    /*    width: 500px;*/
-    /*    height: 1000px;*/
-    /*    right: -10%;*/
-    /*    top: 150%;*/
-    /*}*/
-    
-    /*#Cloud2*/
-    /*{*/
-    /*    width: 900px;*/
-    /*    height: 1260px;*/
-    /*    top: 300%;*/
-    /*    left: -200px;*/
-    /*}*/
-    
-    /*#Plane*/
-    /*{*/
-    /*    width: 900px;*/
-    /*    height: 500px;*/
-    /*    top: 50%;*/
-    /*    left: -900px;*/
-    /*}*/
-    
-    /*#Cloud3{*/
-    /*    width: 900px;*/
-    /*    height: 400px;*/
-    /*    top: 340%;*/
-    /*    right: 30px;*/
-    /*}*/
-    
-    /*#Cloud4{*/
-    /*    width: 900px;*/
-    /*    height: 400px;*/
-    /*    top: 420%;*/
-    /*    right: -300px;*/
-    /*}*/
-    
-    /*#PTYSkyline*/
-    /*{*/
-    /*    top: 7122px;*/
-    /*}*/
-    
-    /*#islandGround{*/
-        /*width: 100vw;*/
-        /*height: 200px;*/
-    /*    top: 7830px;*/
-    /*    left: 0px;*/
-    /*}*/
-    
-    /*#islandGround2{*/
-    /*    width: 450px;*/
-    /*    height: 100px;*/
-    /*    top: 7925px;*/
-    /*    left: 20px;*/
-    /*}*/
-    
-    /*#palmTree{*/
-    /*    width: 800px;*/
-    /*    height: 1000px;*/
-    /*    top: 7000px;*/
-    /*    right: -300px;*/
-    /*}*/
-    
-    /*#rsvpSign{*/
-    /*    width: 325px;*/
-    /*    height: 266px;*/
-    /*    top: 7734px;*/
-    /*    left: 40%;*/
-    /*}*/
-    
-    /*#planningBtn,*/
-    /*#registryBtn,*/
-    /*#photosBtn{*/
-    /*    top: 7725px;*/
-    /*    left: 75%;*/
-    /*    font-size: 2rem;*/
-    /*    height: 33px;*/
-    /*    width: auto;*/
-    /*}*/
-    
-    #planningBtn{
-        transform: translateY(-25px);
-    }
-    
-    #registryBtn{
-        transform: translateY(25px);
-    }
-    
-    #photosBtn{
-        transform: translateY(75px);
-    }
 }
 

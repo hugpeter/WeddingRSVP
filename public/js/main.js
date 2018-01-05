@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	window.onbeforeunload = function () {
+		window.scrollTo(0, 0);
+	};
+	
 	var landscapeModeCnt = 0;
 	var portraitModeCnt = 0;
 	
@@ -12,7 +16,6 @@ $(document).ready(function(){
 		$BLC2 = $('#BackLeftCloud2'),
 		$MC1 = $('#MainCloud1'),
 		$MC2 = $('#MainCloud2'),
-		$sky = $('#skyColor'),
 		$PLinBalloon = $('#PLinBalloon'),
 		$luisaSmile = $('#smile'),
 		$peterSmile = $('#smile1'),
@@ -24,30 +27,17 @@ $(document).ready(function(){
 		$scrollDown = $('#scrollDown'),
 		$text = $('#text'),
 		$plane = $('#Plane'),
-		rsvpForm = $("#rsvpFormWrapper"),
-		cancel = $("#cancel"),
-	    rsvpSign = $("#rsvpSign"),
-	    planningBtn = $('#planningBtn'),
-	    registryBtn = $('#registryBtn'),
-	    photosBtn = $('#photosBtn'),
+	    rsvpSign = document.getElementById('rsvpSign'),
+	    palmTree = document.getElementById('palmTree'),
+	    sunsetSky = document.getElementById('SunSetSky'),
+	    citySkyline = document.getElementById('PTYSkyline'),
+	    islandGround = document.getElementById('islandGround'),
+	    planningBtn = document.getElementById('planningBtn'),
+	    registryBtn = document.getElementById('registryBtn'),
+	    photosBtn = document.getElementById('photosBtn'),
 	    device = $('#device'),
 	    rotateMsg = $('#rotateMsg'),
 	    check = $('#check');
-	    
-	//animation values
-	var balloonFloatDown,
-		balloonMoveLeft,
-		balloonMoveUp,
-		scrollDownHideDuration,
-		text1Duration,
-		planeDuration,
-		sunMovementDuration,
-		sunColorDuration,
-		balloonDuration,
-		rsvpFormXOffset,
-		thirdTextXOffset,
-		thirdTextYOffset
-		;
 	
 	function orientationChange() {
 		//get device width/height
@@ -63,63 +53,6 @@ $(document).ready(function(){
 	    	
 	    	//Calculate all elements' Height and assign their respective top values.
 	    	assignTopValues();
-	    	
-	    	if(width <= 668){ //iphone 6,7,8
-				balloonFloatDown = '-73%';
-				balloonMoveLeft = '-78%';
-				balloonMoveUp = '-83%';
-				scrollDownHideDuration = 50;
-				text1Duration = 900;
-				planeDuration = 800;
-				sunMovementDuration = 4000;
-				sunColorDuration = 4500;
-				balloonDuration = 4500;
-				rsvpFormXOffset = '215%';
-				thirdTextXOffset = '-=20px';
-				thirdTextYOffset = '+=20px';
-			}
-			else if(width > 669 && width <= 1140){ //iphone plus 6,7,8
-				balloonFloatDown = '-76%';
-				balloonMoveLeft = '-82%';
-				balloonMoveUp = '-83%';
-				scrollDownHideDuration = 50;
-				text1Duration = 900;
-				planeDuration = 800;
-				sunMovementDuration = 4000;
-				sunColorDuration = 4500;
-				balloonDuration = 4500;
-				rsvpFormXOffset = '215%';
-				thirdTextXOffset = '-=20px';
-				thirdTextYOffset = '+=20px';
-			}
-			else if(width > 1141 && width <= 1500){ //laptop
-				balloonFloatDown = '-72%';
-				balloonMoveLeft = '-78%';
-				balloonMoveUp = '-78%';
-				scrollDownHideDuration = 100;
-				text1Duration = 1000;
-				planeDuration = 1500;
-				sunMovementDuration = 8000;
-				sunColorDuration = 7000;
-				balloonDuration = 7000;
-				rsvpFormXOffset = '200%';
-				thirdTextXOffset = '+=80px';
-				thirdTextYOffset = '+=60px';
-			}
-			else if(width > 1501){ //27inch monitor
-				balloonFloatDown = '-83%';
-				balloonMoveLeft = '-85%';
-				balloonMoveUp = '-83%';
-				scrollDownHideDuration = 100;
-				text1Duration = 1000;
-				planeDuration = 1500;
-				sunMovementDuration = 8000;
-				sunColorDuration = 7000;
-				balloonDuration = 7000;
-				rsvpFormXOffset = '200%';
-				thirdTextXOffset = '+=80px';
-				thirdTextYOffset = '+=60px';
-			}
 		
 			//initialize scroll magic controller
 			controller = new ScrollMagic.Controller();
@@ -128,11 +61,10 @@ $(document).ready(function(){
 			var BalloonIntroTL = new TimelineMax();
 		
 				BalloonIntroTL
-					.set(rsvpForm, {autoAlpha: 1, x: rsvpFormXOffset})
 					.set($text, {autoAlpha: 0})
 					.set($PLinBalloon, {y: '-150%', autoAlpha: 1, scale: 1.8, transformOrigin: 'bottom center'})
 					.set($scrollDown, {x: '-=80px'})
-					.to($PLinBalloon, 5, {y: balloonFloatDown})
+					.to($PLinBalloon, 3, {y: '-68%'})
 					.add('balloonIn')
 					.fromTo($luisaEyes, 0.1, {scaleY:1, transformOrigin: 'center center'}, {scaleY:0.1, repeat: 1, yoyo: true}, 'balloonIn-=2')
 					.fromTo($peterEyes, 0.1, {scaleY:1, transformOrigin: 'center center'}, {scaleY:0.1, repeat: 1, yoyo: true}, 'balloonIn-=1')
@@ -147,7 +79,7 @@ $(document).ready(function(){
 					.to($sandBag1, 1, {rotation: 0})
 					.fromTo($sandBag3, 3, {rotation: -5, transformOrigin: 'top center'}, {rotation: 5}, '-=4')
 					.to($sandBag3, 1, {rotation: 0}, '-=4')
-					.to($PLinBalloon, 0.5, {x: balloonMoveLeft, y: balloonMoveUp, scale: 1, force3D:false, ease: Power1.easeInOut}, '-=1')
+					.to($PLinBalloon, 0.5, {x: '-80%', y: '-69%', scale: 1, force3D:false, ease: Power1.easeInOut}, '-=1')
 					.to($scrollDown, 1, {autoAlpha: 1, x: '0px', ease: Power4.easeInOut}, '-=1');
 		
 			//on scroll, hide scroll down command, and begin to move clouds up at different speeds
@@ -156,7 +88,7 @@ $(document).ready(function(){
 			var RemoveInstructionsScene = new ScrollMagic.Scene({
 				triggerElement: '#introHook',
 				triggerHook: 0,
-				duration: scrollDownHideDuration,
+				duration: '15%',
 				reverse: true
 			})
 			// .addIndicators()
@@ -172,7 +104,7 @@ $(document).ready(function(){
 			var SunMoveScene = new ScrollMagic.Scene({
 				triggerElement: '#introHook',
 				triggerHook: 0,
-				duration: sunMovementDuration,
+				duration: '800%',
 				reverse: true
 			})
 			.setTween(SunMovementTL)
@@ -188,7 +120,7 @@ $(document).ready(function(){
 			var SunColorScene = new ScrollMagic.Scene({
 				triggerElement: '#introHook',
 				triggerHook: 0,
-				duration: sunColorDuration,
+				duration: '800%',
 				reverse: true
 			})
 			.setTween(SunColorTL)
@@ -211,7 +143,7 @@ $(document).ready(function(){
 			var animateBalloonScene = new ScrollMagic.Scene({
 				triggerElement: '#Cloud1',
 				triggerHook: 1,
-				duration: balloonDuration
+				duration: '800%'
 			})
 			// .addIndicators()
 			.setTween([sandBag1TL, sandBag3TL])
@@ -227,7 +159,7 @@ $(document).ready(function(){
 		    var FirstTextScene = new ScrollMagic.Scene({
 		    	triggerElement: '#Cloud1',
 		    	triggerHook: 0.5,
-		    	duration: text1Duration
+		    	duration: '150%'
 		    })
 		    // .addIndicators()
 		    .setTween(FirstTextTL)
@@ -242,7 +174,7 @@ $(document).ready(function(){
 			var PlaneScene = new ScrollMagic.Scene({
 				triggerElement: '#Cloud2',
 				triggerHook: 0.5,
-				duration: planeDuration
+				duration: '200%'
 			})
 		    // .addIndicators()
 			.setTween(PlaneTL)
@@ -253,14 +185,14 @@ $(document).ready(function(){
 				SecondTextTL			
 					.to($text, 1, {x: '+=20px', autoAlpha: 1, ease: Power4.easeInOut})
 					.to($text, 1, {x: '+=10px', autoAlpha: 0, ease: Power4.easeInOut}, '+=2')
-					.set($text, {x: thirdTextXOffset, y: thirdTextYOffset, text: "Will you join us?"});
+					.set($text, {x: '+=5%', y: '+=15%', text: "Will you join us?"});
 		
 		    var SecondTextScene = new ScrollMagic.Scene({
 		    	triggerElement: '#Cloud4',
 		    	triggerHook: 0.4,
-		    	duration: 2000
+		    	duration: '350%'
 		    })
-		    //.addIndicators()
+		    // .addIndicators()
 		    .setTween(SecondTextTL)
 		    .addTo(controller);
 		
@@ -273,7 +205,7 @@ $(document).ready(function(){
 					.to(photosBtn, 0.5, {autoAlpha: 1, x: '+=20px', ease: Power3.easeInOut});
 		
 		    var ThirdTextScene = new ScrollMagic.Scene({
-		    	triggerElement: '#islandGround2',
+		    	triggerElement: '#islandGround',
 		    	triggerHook: 0.95,
 		    	duration: 0
 		    })
@@ -282,7 +214,7 @@ $(document).ready(function(){
 		    .addTo(controller);
 		
 			//-----------RSVP
-			rsvpSign.on('mouseover', animateSign);
+			rsvpSign.addEventListener("mouseover", animateSign);
 			 
 	    }else{
 	    	portraitModeCnt += 1;
@@ -304,9 +236,33 @@ $(document).ready(function(){
 	}
 	
 	function assignTopValues(){
-		//This function takes the main elements of the page and calculates each of their heights.
-		//It takes these heights and uses them to assign each elements' top value
+		//This function takes the lower elements of the page and calculates each of their heights.
+		//It takes these heights and uses them to assign each elements' top value 
+		//assuring the alignment of elements remains accurate across different screen widths
+		var sunsetSkyRect = sunsetSky.getBoundingClientRect();
+		var citySkylineRect = citySkyline.getBoundingClientRect();
+		var islandGroundRect = islandGround.getBoundingClientRect();
+
+		citySkyline.style.top = sunsetSkyRect.bottom - citySkylineRect.height + 60;
+		islandGround.style.top = sunsetSkyRect.bottom - islandGroundRect.height + 70;
 		
+	    islandGroundRect = islandGround.getBoundingClientRect();
+		
+		var rsvpSignRect = rsvpSign.getBoundingClientRect();
+		rsvpSign.style.top = islandGroundRect.bottom - (islandGroundRect.height * 0.15) - rsvpSignRect.height;
+		
+		var palmTreeRect = palmTree.getBoundingClientRect();
+		palmTree.style.top = islandGroundRect.bottom - (islandGroundRect.height * 0.25) - palmTreeRect.height;
+		
+		var buttonPadding = 20;
+		
+		photosBtn.style.top = islandGroundRect.top;
+		
+		var registryBtnRect = registryBtn.getBoundingClientRect();
+		registryBtn.style.top = islandGroundRect.top - buttonPadding - registryBtnRect.height;
+		
+		var planningBtnRect = planningBtn.getBoundingClientRect();
+		planningBtn.style.top = islandGroundRect.top - buttonPadding * 2 - registryBtnRect.height - planningBtnRect.height;
 	}
 	
 	window.addEventListener('orientationchange', orientationChange);
